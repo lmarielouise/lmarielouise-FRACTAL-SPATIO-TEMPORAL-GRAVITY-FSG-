@@ -110,12 +110,14 @@ If you use this code or theory in your research, please cite **Version 3.1**:
 ```bibtex
 @misc{marielouise2025fsg,
   author       = {Marie-Louise, Laurent},
-  title        = {FRACTAL SPATIO-TEMPORAL GRAVITY (FSG): Theoretical Consolidation and Numerical Proof},
+  title        = {FRACTAL SPATIO-TEMPORAL GRAVITY (FSG): Dynamics of Colliding Clusters & UV-IR Unification},
   year         = 2025,
   publisher    = {Zenodo},
-  version      = {4.0},
-  doi          = {10.5281/zenodo.17876353},
-  url          = {[https://doi.org/10.5281/zenodo.17876353](https://doi.org/10.5281/zenodo.17876353)}
+  version      = {5.0},
+  doi          = {10.5281/zenodo.17899638},
+  url          = {[https://doi.org/10.5281/zenodo.17899638](https://doi.org/10.5281/zenodo.17899638)}
+}
 }
 ```
+
 
