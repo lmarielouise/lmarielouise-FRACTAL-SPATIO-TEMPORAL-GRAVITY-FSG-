@@ -41,11 +41,6 @@ Cosmologically, the model proposes a "Fractal Boost" mechanism to replace Cold D
 The theory is fully falsifiable via precision measurements from Euclid.
 
 ### 🌀 Galaxy Rotation: Newton vs FSG
-*Visual demonstration of the theory:*
-* **Left (Newton):** Without Dark Matter, the rotation velocity drops at the edge (Keplerian decline).
-* **Right (FSG):** The fractal propagator maintains a high velocity at the edge, naturally producing **flat rotation curves**.
-
-### 🌀 Galaxy Rotation: Newton vs FSG
 Visual demonstration of the theory:
 * **Left (Newton):** Without Dark Matter, the rotation velocity drops at the edge (Keplerian decline).
 * **Right (FSG):** The fractal propagator maintains a high velocity at the edge, naturally producing **flat rotation curves**.
@@ -134,6 +129,7 @@ If you use this code or theory in your research, please cite **Version 3.1**:
 }
 }
 ```
+
 
 
 
