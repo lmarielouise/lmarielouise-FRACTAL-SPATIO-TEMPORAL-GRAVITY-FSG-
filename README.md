@@ -124,11 +124,12 @@ If you use this code or theory in your research, please cite **Version 3.1**:
   year         = 2025,
   publisher    = {Zenodo},
   version      = {5.1},
-  doi          = {10.5281/zenodo.17899638},
+  doi          = {10.5281/zenodo.17911187},
   url          = {[10.5281/zenodo.17911187](https://doi.org/10.5281/zenodo.17911187)}
 }
 }
 ```
+
 
 
 
