@@ -220,16 +220,16 @@ f(X_k) \sim \sqrt{\frac{1}{X_k}} \sim \sqrt{k^2} \sim k.
 \end{equation}
 Substituting this back into the propagator equation \eqref{eq:propagator_general}:
 \begin{align}
-G(k) &\sim \frac{1}{k^2 (1 + \mathcal{O}(k))} \quad \text{(UV regime, } k \to \infty\text{)} \\
-G(k) &\sim \frac{1}{k^2 \cdot k} = \frac{1}{k^3} \quad \text{(IR regime, } k \to 0\text{)}.
+G(k) &\sim \frac{1}{k^2 (1 + \mathcal{O}(k))} \quad \text{(Newton regime, } k \to \infty\text{)} \\
+G(k) &\sim \frac{1}{k^2 \cdot (kL)} = \frac{1}{L k^3} \quad \text{(MOND regime, } k \to 0\text{)}.
 \end{align}
 \subsection{Rigorous Emergence of MOND}
 This result is fundamental. The fractional action $X^{-1/2}$ is the unique algebraic form that naturally generates a **cubic propagator** $1/k^3$ in the infrared.
 \begin{equation}
-\mathbf{G(k) \xrightarrow{IR} \frac{1}{k^3}.}
+\mathbf{G(k) \xrightarrow{IR} \frac{1}{L k^3}.}
 \label{eq:Gk3}
 \end{equation}
-A propagator scaling as $1/k^3$ is the necessary and sufficient condition to obtain a gravitational potential $\Phi(r) \sim \ln r$ in 3D space, which corresponds to a constant acceleration $a \sim 1/r$. 
+A propagator scaling as $1/k^3$ is the necessary and sufficient condition to obtain a gravitational potential $\Phi(r) \sim \ln r$ in 3D space, which corresponds to a constant acceleration $a \sim 1/r$. 
 Thus, FSG derives the MOND phenomenology from first principles of fractal geometry, rather than adjusting a free function.
 % ---------------- FIGURE ----------------
 \begin{figure}[h!]
@@ -266,7 +266,7 @@ For the specific fractional correction $f(X) \sim \gamma (L^2/X)^{1/2}$ postulat
 \begin{equation}
 \Gamma(k) \sim (k L)^{\eta} \quad \text{with } \eta = 1.
 \end{equation}
-This follows directly from the scaling $f(X_k) \sim k$ derived in the previous section.
+This factor $\Gamma(k) \sim kL$ emerges from the analytic structure of $f(X) \sim X^{-1/2}$, demonstrating that the scaling corresponds to a non-local operator of the first fractional degree, $\mathbf{\eta=1}$.
 \subsection{The Modified Poisson Equation}
 Substituting this form factor into the field equations yields the **Modified Poisson Equation**:
 \begin{equation}
@@ -957,7 +957,7 @@ Numerical integration of the modified Jeans equation.
 \end{figure}
 \newpage
 % ============================================================
-\section{Simulation Code (Core Logic)}
+\section{Simulation Code (Core Logic)} \label{app:code}
 % ============================================================
 \label{app:code}
 For reproducibility, we provide the core Python function used to integrate the modified Boltzmann equation. The term \texttt{G\_eff\_fsg} implements the scale-dependent coupling derived from the fractional action.
@@ -1015,7 +1015,7 @@ def derivatives(y, a, k, model_type, H0, Omega_b, Omega_dm):
     return [d_delta, d2_delta]
 \end{lstlisting}
 % ============================================================
-\section{FDTD Simulation of Non-Local Wave Dynamics}
+\section{FDTD Simulation of Non-Local Wave Dynamics} \label{app:bullet_code}
 % ============================================================
 \label{app:bullet_code}
 The separation of mass and gravity in the Bullet Cluster is derived from the hyperbolic nature of the FSG equations. Below is the core logic of the Finite-Difference Time-Domain (FDTD) solver used to generate Figure \ref{fig:bullet_sim}.
@@ -1048,3 +1048,4 @@ for n in range(Nt):
 \end{lstlisting}
 \end{onehalfspacing}
 \end{document}
+
