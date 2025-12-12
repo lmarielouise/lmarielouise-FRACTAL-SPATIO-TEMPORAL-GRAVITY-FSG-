@@ -3,7 +3,7 @@
 **Author:** Laurent Marie-Louise  
 **Date:** December 2025  
 **Version:** **5.1** (Rigorous MOND Derivation & Dynamical Stability)  
-**DOI:** [[10.5281/zenodo.17899638](https://doi.org/10.5281/zenodo.17899638)
+**DOI:** [[[10.5281/zenodo.17899638](https://doi.org/10.5281/zenodo.17899638)]
 **Status:** Preprint (Dynamics of Colliding Clusters & UV-IR Unification)
 
 ---
@@ -129,6 +129,7 @@ If you use this code or theory in your research, please cite **Version 3.1**:
 }
 }
 ```
+
 
 
 
