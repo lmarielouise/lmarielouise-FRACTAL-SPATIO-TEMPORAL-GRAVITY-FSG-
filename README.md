@@ -2,33 +2,11 @@
 
 **Author:** Laurent Marie-Louise  
 **Date:** December 2025  
-**Version:** 5.0 (Definitive Version)  
-**DOI:** [10.5281/zenodo.17899638](https://doi.org/10.5281/zenodo.17899638)  
+**Version:** 5.1 (Rigorous MOND Derivation & Dynamical Stability)  
+**DOI:** [[10.5281/zenodo.17899638](https://doi.org/10.5281/zenodo.17899638) ]
 **Status:** Preprint (Dynamics of Colliding Clusters & UV-IR Unification)
 
-## 📢 What's New in Version 5.0: The Dynamical Turning Point
-This update marks a decisive evolution of the theory, extending its validity from static systems to **non-equilibrium dynamic systems**. By addressing the phenomenology of colliding clusters, FSG resolves the most significant observational challenge to modified gravity theories.
-
-* **Cluster Dynamics Solved:** Introduced a new mechanism for the **Bullet Cluster**, demonstrating via FDTD simulation that the non-local scalar field possesses intrinsic inertia, leading to a natural separation of mass and potential ("Ballistic Overshoot").
-* **Physical Interpretation:** Deepened the concept of the **"Inertia of the Vacuum"**, treating the gravitational field as a dynamical wave entity capable of storing momentum.
-* **Reproducibility:** Added the full source code for the 1D FDTD simulation of the cluster collision to ensure open scientific verification.
-* **Theoretical Unification:** Successfully unified the explanation of galactic rotation curves, cosmic acceleration, and the dynamics of merging clusters within a single, ghost-free geometric framework.
-
----
-
-## Abstract
-We propose a modified theory of gravity based on a Fractal and Non-Local Spacetime Geometry (FSG), obtained from an effective action containing the **fractional** non-local operator **X = □⁻¹R**. The effective action induces infrared corrections to General Relativity driven by a dimensional flow.
-
-We show that this specific fractional structure implies a reduction of effective spectral dimension towards **d_S ≈ 2** in the IR. This geometric reduction is the rigorous cause of the transition to a modified propagator **G(k) ∼ k⁻³**, which is the requisite condition for MOND dynamics. This leads to:
-1.  Flat galactic rotation curves without dark matter.
-2.  An exact **Baryonic Tully-Fisher relation** (V⁴ = GM a₀), derived analytically.
-3.  A natural emergence of the acceleration scale **a₀ ≈ c²√(Λ/3)**.
-
-To ensure consistency with Solar System tests, we explicitly derive a **source-dependent screening mechanism** restoring General Relativity at small scales.
-
-Regarding cluster dynamics, we demonstrate via 1D conceptual simulation that non-local wave dynamics possess the **intrinsic capacity for ballistic overshoot**. This offers a qualitative mechanism for the **Bullet Cluster phenomenology** (separation of mass and potential) driven by the inertia of the vacuum, without requiring collisionless Dark Matter.
-
-Cosmologically, the model proposes a "Fractal Boost" mechanism to replace Cold Dark Matter. Preliminary numerical integration confirms that this geometric enhancement can sustain the acoustic oscillations amplitude during recombination. Additionally, the model predicts a phantom-like equation of state (**w₀ < -1**), measurable deviations in **H(z)**, and early structure formation consistent with JWST.
+## 📢 What's New in Version 5.1: The Rigorous FoundationThis update solidifies the mathematical foundation of FSG, formally resolving the ambiguity in the MOND derivation and ensuring the theory is robust against fundamental critique.Cluster Dynamics Solved: Introduced a new mechanism for the Bullet Cluster, demonstrating via FDTD simulation that the non-local scalar field possesses intrinsic inertia, leading to a natural separation of mass and potential ("Ballistic Overshoot").Rigorous MOND Derivation: Formally closed the algebraic paradox of MOND. The emergence of the $\mathbf{k^{-3}}$ propagator is proven to result from a fractional operator $\mathbf{\nabla^3}$ in the Modified Poisson Equation, eliminating the need for simplifying (and inconsistent) approximations.Physical Interpretation: Deepened the concept of the "Inertia of the Vacuum", treating the gravitational field as a dynamical wave entity capable of storing momentum.Theoretical Unification: Successfully unified the explanation of galactic rotation curves, cosmic acceleration, and the dynamics of merging clusters within a single, ghost-free geometric framework.AbstractWe propose a modified theory of gravity based on a Fractal and Non-Local Spacetime Geometry (FSG), obtained from an effective action containing the fractional non-local operator X = □⁻¹R. The effective action induces infrared corrections to General Relativity driven by a dimensional flow.We show that this specific fractional structure, $\mathbf{f(X) \sim X^{-1/2}}$, implies a reduction of effective spectral dimension towards d_S ≈ 2 in the IR. This geometric reduction is the rigorous cause of the transition to a modified propagator $\mathbf{G(k) \sim 1/(L k^3)}$, which is the requisite condition for MOND dynamics.Crucially, the Modified Poisson Equation is shown to be governed by a fractional operator of degree $\mathbf{\nabla^3}$, resolving the fundamental algebraic paradox in MOND derivation.This leads to:Flat galactic rotation curves without dark matter.An exact Baryonic Tully-Fisher relation ($\mathbf{V^4 = GM a_0}$), derived analytically.A natural emergence of the acceleration scale $\mathbf{a_0 \approx c^2\sqrt{\Lambda/3}}$.To ensure consistency with Solar System tests, we explicitly derive an exponentially suppressed screening mechanism restoring General Relativity at small scales.Regarding cluster dynamics, we demonstrate via 1D conceptual simulation that non-local wave dynamics possess the intrinsic capacity for ballistic overshoot. This offers a qualitative mechanism for the Bullet Cluster phenomenology (separation of mass and potential) driven by the inertia of the vacuum, without requiring collisionless Dark Matter.Cosmologically, the model proposes a "Fractal Boost" mechanism to replace Cold Dark Matter. Preliminary numerical integration confirms that this geometric enhancement can sustain the acoustic oscillations amplitude during recombination. Additionally, the model predicts a phantom-like equation of state ($\mathbf{w_0 < -1}$), measurable deviations in $\mathbf{H(z)}$, and early structure formation consistent with JWST.The theory is fully falsifiable via precision measurements from Euclid.
 
 ### 🌀 Galaxy Rotation: Newton vs FSG
 Visual demonstration of the theory:
@@ -113,11 +91,12 @@ If you use this code or theory in your research, please cite **Version 3.1**:
   title        = {FRACTAL SPATIO-TEMPORAL GRAVITY (FSG): Dynamics of Colliding Clusters & UV-IR Unification},
   year         = 2025,
   publisher    = {Zenodo},
-  version      = {5.0},
+  version      = {5.1},
   doi          = {10.5281/zenodo.17899638},
   url          = {[https://doi.org/10.5281/zenodo.17899638](https://doi.org/10.5281/zenodo.17899638)}
 }
 }
 ```
+
 
 
