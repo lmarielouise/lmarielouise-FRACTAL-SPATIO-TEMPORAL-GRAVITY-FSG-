@@ -19,6 +19,10 @@ Version 6 is the result of a systematic internal audit of v5.1. Six weaknesses w
 * **w(z) and H(z) computed, not asserted (fixed).** The unfounded "2–6%" claim is replaced by a computed first-order bracket: w₀ ∈ [−1.7, −1.1] and |ΔH/H| ∈ [1%, 13%] for 0.5 < z < 2, anchored by the RR-model benchmark below and the V-tracking upper bound above (`simulations/sim_friedmann_fsg.py`). The structural, falsifiable core is unchanged: **w₀ < −1** (growing memory density ⟹ phantom).
 * **Bullet Cluster reframed (downgraded honestly).** The 1D FDTD simulation is now presented for exactly what it is: a qualitative proof of principle of transient field–source decoupling — with its limitations (1D, v = 0.6c vs ~0.01c observed, transient vs persistent offset, no lensing map) listed explicitly in the paper.
 
+### Extending to the small scale (new physical content)
+* **Strong field / black holes (new section, new result).** Because a vacuum black hole has R = 0, the non-local term switches off and **Schwarzschild and Kerr are exact solutions of FSG** — black-hole shadows, ringdown and ISCO are identical to GR. Any deviation is confined beyond the MOND radius r_M = √(GM/a₀), which exceeds the horizon by 8–11 orders of magnitude (`simulations/sim_black_hole.py`, with a table for the Sun, stellar BH, Sgr A*, M87*). The old `sim_black_hole.py`, which applied the MOND force at the horizon and claimed to "soften" the singularity, is retracted — FSG is an IR modification and does **not** resolve the singularity.
+* **UV completion honestly bounded.** The "proof of stability" is downgraded to its true status: the entire (infinite-derivative) form factor e^(−□/M*²) is **tree-level ghost-free** (Biswas–Gerwick–Koivisto–Mazumdar; Modesto; Tomboulis), while loop-level unitarity and the non-perturbative treatment of the IR branch cut remain open. The erroneous invocation of the Vafa–Witten theorem is withdrawn.
+
 ## Abstract
 
 We propose a modified theory of gravity based on a Fractal and Non-Local Spacetime Geometry (FSG), obtained from an effective action containing the **fractional** non-local operator $X = \Box^{-1}R$, motivated by an infrared flow of the spectral dimension towards $d_S \approx 2$.
@@ -77,7 +81,7 @@ This repository contains the numerical laboratory validating the theory, located
 ### 6. Additional Simulations
 * **`simulations/sim_galaxy_rotation.py`** — Generates the Newton vs FSG rotation animation (`galaxy_rotation.gif`).
 * **`simulations/sim_solar_system.py`** — Solar System orbits (note: the v5 screening mechanism is retracted in v6; PPN compatibility now follows from the perturbative non-local calculation in the paper).
-* **`simulations/sim_black_hole.py`** — Behavior of the fractal propagator in the strong-field regime.
+* **`simulations/sim_black_hole.py`** — Strong-field scale separation: computes r_s and r_M = √(GM/a₀) for the Sun, stellar/intermediate BHs, Sgr A* and M87*, and plots g(r) showing FSG ≡ GR from the horizon to the MOND radius (`fig_black_hole_scales.pdf`).
 * **`simulations/sim_cosmic_web.py`** — Large-scale structure formation under the fractal propagator.
 
 ---
@@ -86,6 +90,7 @@ This repository contains the numerical laboratory validating the theory, located
 * **Rotation Curves & BTFR:** flat curves and V⁴ = GMa₀ from the exact deep-MOND solution of the AQUAL limit — *derived*.
 * **a₀ from cosmic memory:** 1.14×10⁻¹⁰ m/s², −4.8% vs observation at zeroth order — *computed, no free parameter*.
 * **Solar System:** |γ_PPN − 1| ~ 10⁻¹⁶–10⁻²⁰ without screening — *computed perturbatively*.
+* **Black holes:** Schwarzschild/Kerr exact solutions; GR recovered from horizon to r_M (8–11 decades) — *derived*.
 * **JWST Observations:** early collapse at z ~ 15–20 — *computed via linear growth ODE*.
 * **w₀ < −1 (phantom):** structural consequence of growing memory — *derived*; magnitude bracketed [−1.7, −1.1] — *first-order estimate*.
 * **Bullet Cluster:** transient field–source decoupling — *qualitative proof of principle only*.

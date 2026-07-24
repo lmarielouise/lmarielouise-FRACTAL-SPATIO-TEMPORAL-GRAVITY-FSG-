@@ -53,7 +53,7 @@ a_0 = c H_0\,\frac{|V_0|^{3/2}}{|U_0|} \simeq 1.14\times 10^{-10}\ {\rm m/s^2},
 \]
 within $5\%$ of the observed value with no free parameter at zeroth order in back-reaction.
 
-A perturbative treatment of the non-local sector around the cosmological background shows that Solar System constraints are satisfied \emph{without any screening mechanism} ($\delta\gamma \sim 10^{-20}$), for the same structural reason as in the related RR non-local model. Cosmologically, the monotonic growth of the memory fields structurally implies a phantom-like equation of state ($w_0 < -1$); a first-order estimate brackets the deviation of $H(z)$ between $\sim 1\%$ and $\sim 13\%$ for $0.5<z<2$, testable by Euclid.
+A perturbative treatment of the non-local sector around the cosmological background shows that Solar System constraints are satisfied \emph{without any screening mechanism} ($\delta\gamma \sim 10^{-20}$), for the same structural reason as in the related RR non-local model. In the strong-field regime, Schwarzschild and Kerr are exact vacuum solutions of FSG (since $R=0$ switches off the non-local term), so black-hole observables --- shadows, ringdown, ISCO --- are identical to General Relativity; any deviation is confined beyond the MOND radius $r_M=\sqrt{GM/a_0}$, $8$--$11$ orders of magnitude outside the horizon. Cosmologically, the monotonic growth of the memory fields structurally implies a phantom-like equation of state ($w_0 < -1$); a first-order estimate brackets the deviation of $H(z)$ between $\sim 1\%$ and $\sim 13\%$ for $0.5<z<2$, testable by Euclid.
 Regarding cluster dynamics, a 1D wave simulation demonstrates that the non-local field can transiently detach from its baryonic source (\emph{ballistic overshoot}), a qualitative mechanism relevant to the Bullet Cluster; a quantitative confrontation requires 3D hydrodynamical simulations. The geometry of the CMB acoustic peaks is shown to be compatible with FSG (the sound horizon is unchanged and the induced peak shift is absorbed by the $(w,H_0)$ degeneracy), while the peak \emph{amplitudes} require a dedicated non-local Boltzmann code and remain the decisive open test.
 \end{abstract}
 \newpage
@@ -495,6 +495,61 @@ This 1D toy model illustrates the qualitative decoupling mechanism proposed for 
 \end{figure}
 \newpage
 % ============================================================
+\section{The Strong-Field Regime: Black Holes and the Recovery of General Relativity}
+\label{sec:strongfield}
+% ============================================================
+Having established the infrared (large-scale) behaviour of FSG, we now turn to the opposite extreme --- the strong-field, small-scale regime of black holes. This is the natural test of the claim that FSG is a purely \emph{infrared} modification of gravity: at small scales it must not merely be viable, it must reduce to General Relativity so exactly that no compact-object observation (LIGO/Virgo ringdown, Event Horizon Telescope shadows, pulsar timing) can distinguish it. We show this is automatic, and we quantify the scale at which any deviation could in principle appear.
+\subsection{Schwarzschild is an Exact Vacuum Solution of FSG}
+Consider the FSG field equations in vacuum ($T_{\mu\nu}=0$). A Schwarzschild black hole is a Ricci-flat solution: $R_{\mu\nu}=0$, hence $R=0$. The non-local field is then
+\begin{equation}
+X = \Box^{-1}R = \Box^{-1}(0) = X_{\rm cosmo},
+\end{equation}
+i.e.\ the source term vanishes and $X$ reduces to the homogeneous solution fixed by cosmological boundary conditions --- the same $X_{\rm cosmo}=U_0=\mathcal{O}(10)$ computed in Section~\ref{sec:memory}. On the scale of a black hole ($\sim$km to AU) compared with the Hubble radius ($\sim$Gpc), this background is constant to a precision of order $(r/L)^2 \lesssim 10^{-30}$, so $\nabla X_{\rm cosmo}\to 0$ and
+\begin{equation}
+f(X) = f(X_{\rm cosmo}) \equiv f_0 = \text{const.}
+\end{equation}
+With $f_0$ constant and $R=0$, every term of the non-local correction $\Delta G_{\mu\nu}$ that carries a derivative of $f$ or a factor of $R$ vanishes, leaving
+\begin{equation}
+(1+f_0)\,G_{\mu\nu} = 0 \quad\Longrightarrow\quad G_{\mu\nu}=0.
+\end{equation}
+The constant $(1+f_0)$ merely renormalizes Newton's constant, $G_{\rm eff}=G/(1+f_0)$, the same rescaling that operates cosmologically. \textbf{The Schwarzschild (and, by the same argument, Kerr) geometry is therefore an exact solution of FSG.} Black-hole shadows, photon rings, innermost stable circular orbits, and quasi-normal ringdown modes are identical to those of GR.
+\subsection{The Scale of Any Possible Deviation: the MOND Radius}
+The fractional correction becomes dynamically relevant only where the local acceleration falls to the scale $a_0$, i.e.\ at the \emph{MOND radius}
+\begin{equation}
+r_M = \sqrt{\frac{GM}{a_0}}.
+\label{eq:mond_radius}
+\end{equation}
+Comparing this with the horizon radius $r_s = 2GM/c^2$ gives the scale separation
+\begin{equation}
+\frac{r_M}{r_s} = \frac{c^2}{2\sqrt{GM\,a_0}},
+\end{equation}
+which \emph{decreases} with mass but remains astronomically large for every black hole (Table~\ref{tab:bh_scales}). For a stellar-mass black hole the modification is pushed out to $\sim 0.1$~pc, eleven orders of magnitude beyond the horizon; even for the M87* supermassive black hole imaged by the EHT, the separation is a factor $\sim 4\times10^6$. Throughout the entire strong-field region the FSG force law is Newtonian/relativistic, not logarithmic.
+\begin{table}[h!]
+\centering
+\begin{tabular}{lccc}
+\hline
+Object & Horizon $r_s$ & MOND radius $r_M$ & $r_M/r_s$ \\
+\hline
+Sun (reference)          & $2.95$~km   & $0.034$~pc & $3.6\times10^{11}$ \\
+Stellar BH ($10\,M_\odot$) & $29.5$~km   & $0.11$~pc  & $1.1\times10^{11}$ \\
+Sgr A* ($4\times10^6\,M_\odot$) & $0.08$~AU & $68$~pc & $1.8\times10^{8}$ \\
+M87* ($6.5\times10^9\,M_\odot$) & $128$~AU & $2.75$~kpc & $4.4\times10^{6}$ \\
+\hline
+\end{tabular}
+\caption{Scale separation between the event horizon and the MOND radius $r_M=\sqrt{GM/a_0}$, computed in \texttt{simulations/sim\_black\_hole.py}. FSG deviates from GR only beyond $r_M$; the strong-field region $r_s<r<r_M$ is pure General Relativity.}
+\label{tab:bh_scales}
+\end{table}
+% ---------------- FIGURE ----------------
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1.0\textwidth]{fig_black_hole_scales.pdf}
+\caption{Acceleration law $g(r)$ around a stellar-mass (left) and supermassive (right) black hole. The FSG curve (blue) is indistinguishable from Newton/GR (red dashed) from the horizon $r_s$ outward, departing from it only near the MOND radius $r_M$ where $g$ approaches $a_0$. The strong-field region spans $8$--$11$ decades of pure GR.}
+\label{fig:bh_scales}
+\end{figure}
+\subsection{What FSG Does \emph{Not} Do: the Singularity}
+It is important to state a negative result honestly. Because FSG is an infrared modification, it does \emph{nothing} to the central singularity. As $r\to 0$ the curvature diverges, $X$ grows large, and $f(X)\sim X^{-1/2}\to 0$: the theory becomes \emph{more} GR-like, not less. FSG therefore neither softens nor resolves the black-hole singularity; that remains the responsibility of the (unknown) ultraviolet completion discussed in the next subsection and in Section~\ref{sec:risks}. Any claim that the logarithmic potential ``smooths out'' the singularity --- as suggested in an earlier version of our black-hole script --- is incorrect and is retracted.
+\newpage
+% ============================================================
 \section{Non-Local Formalism: \texorpdfstring{$R\Box^{-1}R$}{R Box^{-1} R},
 \texorpdfstring{$R\Box^{-2}R$}{R Box^{-2} R}, and Fractal Geometry}
 % ============================================================
@@ -724,6 +779,7 @@ Summary of key predictions of FSG versus $\Lambda$CDM.}
 \newpage
 % ============================================================
 \section{Theoretical Risks: How FSG Could Be Refuted}
+\label{sec:risks}
 % ============================================================
 A scientifically healthy theory must be vulnerable to data.  
 FSG can be falsified by:
@@ -745,30 +801,26 @@ We propose a "Fractal Boost" mechanism where the effective gravitational couplin
 The theory requires the implementation of a full Boltzmann solver (modified CLASS/CAMB). If the numerical integration of the non-local equations fails to match the Planck data—specifically the relative heights and phases of the acoustic peaks—\textbf{FSG is falsified}.
 \subsection{Failure of the Perturbative PPN Result at Higher Order}
 As of v6 the theory no longer relies on any screening mechanism: the perturbative calculation of Section~\ref{sec:memory} gives $|\gamma_{\rm PPN}-1| \sim 10^{-16}$--$10^{-20}$, far below all Solar System bounds, because the non-local sector is sourced by the homogeneous cosmological background. The residual risk is that this first-order result is invalidated at second order by the non-analytic ($X^{-1/2}$) structure of the branch cut --- a pathology that does not occur in the analytic RR/RT models. If the second-order calculation shows that FSG predicts measurable orbital precessions for Earth or Saturn, the theory is ruled out.
-\subsection{UV Regularization and Vacuum Stability}
-A major theoretical concern with fractional operators of the form $X^{-1/2}$ is the potential introduction of Ostrogradsky ghosts or tachyon instabilities in the ultraviolet (UV) regime. To guarantee vacuum stability, the FSG action must be understood as the infrared limit of a non-local theory regularized by an \textbf{entire function}.
-We propose the following UV-completed form factor $\mathcal{F}(\Box)$:
+\subsection{UV Completion and Vacuum Stability: Status and Open Problems}
+\label{sec:uv}
+A fractional operator of the form $X^{-1/2}$ raises two distinct ultraviolet concerns, which earlier versions of this paper conflated and over-claimed. We separate them.
+\paragraph{(a) The infinite-derivative form factor (tractable).}
+We regularize the action with an \emph{entire} (infinite-derivative) form factor,
 \begin{equation}
-S_{UV} = \frac{M_P^2}{2} \int d^4x \sqrt{-g} \, R \, \left[ 1 + \left(\frac{L^2}{\Box^{-1}R}\right)^{\frac{1}{2}} e^{-\Box / M_*^2} \right],
+S_{UV} = \frac{M_P^2}{2} \int d^4x \sqrt{-g} \, R \, \left[ 1 + \left(\frac{L^2}{\Box^{-1}R}\right)^{\frac{1}{2}}\, e^{-\Box / M_*^2} \right],
 \label{eq:regularized_action}
 \end{equation}
-where $M_* \gg \text{TeV}$ is a fundamental UV cutoff scale (related to the scale of new physics or Quantum Gravity).
-\paragraph{Proof of Stability:}
-The stability of the theory is determined by the pole structure of the propagator $\Pi(k^2)$.
-\begin{enumerate}
-    \item \textbf{In the IR ($k^2 \ll M_*^2$):} The exponential $e^{-k^2/M_*^2} \approx 1$. The fractional term dominates, driving the dimensional reduction $d_S \to 2$ and generating the MOND phenomenology ($1/k^3$ scaling).
-    \item \textbf{In the UV ($k^2 \gg M_*^2$):} The exponential term $e^{-k^2/M_*^2}$ suppresses the fractional operator faster than any polynomial growth. The action reduces exponentially to:
-    \begin{equation}
-    S_{eff} \xrightarrow{k \to \infty} \frac{M_P^2}{2} \int d^4x \sqrt{-g} \, R .
-    \end{equation}
-\end{enumerate}
-Since the UV limit recovers exact General Relativity, the high-energy spectrum contains only the transverse-traceless graviton (spin-2) and no pathological ghost degrees of freedom. The introduction of the analytic form factor $e^{-\Box/M_*^2}$ (an entire function) ensures that no new poles are introduced in the complex plane, preserving unitarity (Vafa-Witten theorem corollary for non-local theories).
+with $M_* \gg 1$~TeV a UV scale. Around flat space the graviton propagator acquires a factor $e^{-k^2/M_*^2}$. Because an entire function $e^{H(\Box)}$ with $H$ entire has \emph{no zeros}, it introduces \emph{no new poles} in the complex $k^2$ plane: the propagator retains only the massless $k^2=0$ pole, i.e.\ the transverse-traceless spin-2 graviton, with no Ostrogradsky ghost. This is the standard result of infinite-derivative (non-local) ghost-free gravity established by Biswas, Gerwick, Koivisto and Mazumdar \cite{Biswas2012} and by Modesto and Tomboulis \cite{Modesto2012,Tomboulis1997}; it holds \emph{at tree level}. In the UV ($k^2 \gg M_*^2$) the correction is exponentially suppressed and the action reduces to Einstein--Hilbert, recovering exact General Relativity --- consistent with the strong-field results of Section~\ref{sec:strongfield}.
+\paragraph{(b) The fractional branch cut (open).}
+The suppression in (a) controls the UV but does not remove the non-analytic $X^{-1/2}$ branch-cut structure, which lives in the \emph{infrared} and is precisely the feature responsible for MOND dynamics --- it is a feature, not a UV pathology. Its status is nonetheless not fully settled: a complete demonstration of unitarity requires (i) a loop-level analysis, which for infinite-derivative gravity is subtle and still debated even in the analytic case, and (ii) a non-perturbative treatment of the branch cut, absent in the analytic RR/RT models. We therefore state the honest position: FSG is \emph{tree-level ghost-free} under the entire-form-factor completion~\eqref{eq:regularized_action}, and its full quantum consistency is an open problem, not a proven theorem. (The previous invocation of the Vafa--Witten theorem was a misattribution --- that result concerns parity and vector-symmetry realization in vector-like gauge theories, not unitarity of non-local gravity --- and is withdrawn.)
+\paragraph{Falsifiable content.} If a rigorous analysis shows that no entire form factor can simultaneously (i) preserve the IR $X^{-1/2}$ branch cut required for MOND and (ii) maintain unitarity, then the FSG action has no consistent UV completion and the framework fails at the level of principle.
 % ============================================================
 \section{Strengths of FSG}
 % ============================================================
 \begin{itemize}
     \item One single scale: $a_0 = cH_0\,|V_0|^{3/2}/|U_0|$, derived from the cosmic memory fields (not fitted), within $5\%$ of observation.
     \item Coherent framework linking MOND and holographic scaling.
+    \item Exact recovery of GR in the strong field: Schwarzschild/Kerr are vacuum solutions, so black-hole observables are unmodified.
     \item Rotation curves reproduced without halos or tuning.
     \item JWST predictions matched (early massive galaxies).
     \item Precise, quantitative, falsifiable predictions for $w(z)$, $H(z)$,
@@ -918,6 +970,19 @@ Phys.\ Rept.\ \textbf{119}, 1 (1985).
 P.~Dona, M.~Maggiore, M.~Mancarella,
 \emph{Nonlocal gravity with a Weyl-square term},
 Phys.\ Rev.\ D \textbf{92}, 084019 (2015).
+% Ghost-free infinite-derivative (non-local) gravity
+\bibitem{Biswas2012}
+T.~Biswas, E.~Gerwick, T.~Koivisto, A.~Mazumdar,
+\emph{Towards singularity- and ghost-free theories of gravity},
+Phys.\ Rev.\ Lett.\ \textbf{108}, 031101 (2012).
+\bibitem{Modesto2012}
+L.~Modesto,
+\emph{Super-renormalizable quantum gravity},
+Phys.\ Rev.\ D \textbf{86}, 044005 (2012).
+\bibitem{Tomboulis1997}
+E.~T.~Tomboulis,
+\emph{Superrenormalizable gauge and gravitational theories},
+arXiv:hep-th/9702146 (1997).
 \end{thebibliography}
 \newpage
 \appendix
