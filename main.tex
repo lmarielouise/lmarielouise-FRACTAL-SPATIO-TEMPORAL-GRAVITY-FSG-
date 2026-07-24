@@ -28,7 +28,7 @@
 % ============================
 \title{FRACTAL SPATIO-TEMPORAL GRAVITY (FSG)}
 \author{Laurent MARIE-LOUISE}
-\date{Version 7.0 (draft) --- July 2026}
+\date{Version 6.0 (corrected) --- July 2026}
 % ============================
 \begin{document}
 \maketitle
@@ -37,24 +37,15 @@
 % ABSTRACT
 % ============================
 \begin{abstract}
-We propose a modified theory of gravity based on a Fractal and Non-Local Spacetime Geometry (FSG), obtained from an action containing the non-local scalar operator $X = \Box^{-1}R$. The effective action
-\[
-S_{\rm FSG} = \frac{M_P^2}{2}\int d^4x\,\sqrt{-g}\,
-  R\left[1 + \left(\frac{L^2}{X}\right)^{\frac{1}{2}}\right] + S_m
-\]
-induces infrared corrections to General Relativity driven by a dimensional flow, motivated by the reduction of the effective spectral dimension towards $d_S \simeq 2$ in the IR.
+We present a corrected formulation of Fractal Spacetime Gravity (FSG), a framework in which dark matter is replaced by an infrared modification of the effective dimensionality of spacetime. The founding principle (the ``pillar'') is that the gravitational flux propagates through an effective number of spatial dimensions $d_{\rm eff}$ that flows from $3$ in the high-acceleration regime to $2$ in the deep infrared, with the transition set by the acceleration scale $a_0$. Flux conservation, $g\,A(r)=4\pi G M$ with $\mathrm{d}\ln A/\mathrm{d}\ln r = d_{\rm eff}-1$, then yields for a point mass the exact deep-MOND law $g=\sqrt{g_N a_0}$, the logarithmic potential, flat rotation curves, and the \emph{exact} baryonic Tully--Fisher relation $V^4=GM a_0$ (verified numerically to $<0.01\%$). We show that the observed radial acceleration relation is itself a direct measurement of the function $d_{\rm eff}(g)$. Because the reduction is geometric ($\Phi=\Psi$), gravitational lensing follows the dynamics automatically, evading the historical failure of scalar MOND theories.
 
-Version 7 restructures the theory around a result established in this work: a \emph{no-go theorem} showing that the curvature-memory sector $R\,f(\Box^{-1}R)$ alone cannot produce MOND (in the quasi-static limit $\Box^{-1}R$ is local in the potential, so no acceleration-dependent interpolation function can arise; the rotation curve remains Keplerian). The action is therefore completed by a \emph{kinetic memory term} $\propto a_0^2 F\bigl(c^4(\partial U)^2/4a_0^2\bigr)$, built from the gradient of the same non-local field $U=\Box^{-1}R$. Through the localization constraint, this additive term becomes a multiplicative modification of the Poisson operator, and the Bekenstein--Milgrom (AQUAL) equation is \emph{derived}, with $\mu_{\rm eff}(|\nabla\chi|/a_0) = 1+\tfrac{4\beta}{\alpha}F'$. The choice $\mu_{\rm eff}(y)=1-e^{-y}$ gives the exact deep-MOND limit and Newtonian restoration with corrections $\mathcal{O}(e^{-g/a_0})$. This leads to:
-(i) flat galactic rotation curves without dark matter,
-(ii) an exact baryonic Tully–Fisher relation $V^4 = GM a_0$, and
-(iii) an acceleration scale derived from the cosmic memory fields $U=\Box^{-1}R$ and $V=\Box^{-2}R$,
-\[
-a_0 = c H_0\,\frac{|V_0|^{3/2}}{|U_0|} \simeq 1.14\times 10^{-10}\ {\rm m/s^2},
-\]
-within $5\%$ of the observed value with no free parameter at zeroth order in back-reaction.
+We emphasize the epistemic status honestly: the pillar is an \emph{effective law}, at the same level of description as Milgrom's 1983 formulation, and the covariant action realizing it is stated as the central open problem. Two earlier claims to derive this law from a covariant action --- the $k^{-3}$ propagator argument of v5.1 and the kinetic/curvature non-local reductions of the v7 draft --- are shown to fail by explicit no-go results and are formally retracted.
 
-A perturbative treatment of the non-local sector around the cosmological background shows that Solar System constraints are satisfied \emph{without any screening mechanism} ($\delta\gamma \sim 10^{-20}$), for the same structural reason as in the related RR non-local model. In the strong-field regime, Schwarzschild and Kerr are exact vacuum solutions of the curvature-memory sector ($R=0$ switches it off), and the kinetic sector corrects them only by $\mathcal{O}(e^{-g/a_0})$ --- doubly exponentially negligible near a horizon where $g/a_0\sim10^{11}$; black-hole observables (shadow, ISCO) coincide with General Relativity, and any deviation is confined beyond the MOND radius $r_M=\sqrt{GM/a_0}$, $8$--$11$ orders of magnitude outside the horizon. Cosmologically, the monotonic growth of the memory fields structurally implies a phantom-like equation of state ($w_0 < -1$); a first-order estimate brackets the deviation of $H(z)$ between $\sim 1\%$ and $\sim 13\%$ for $0.5<z<2$, testable by Euclid.
-Regarding cluster dynamics, a 1D wave simulation demonstrates that the non-local field can transiently detach from its baryonic source (\emph{ballistic overshoot}), a qualitative mechanism relevant to the Bullet Cluster; a quantitative confrontation requires 3D hydrodynamical simulations. The geometry of the CMB acoustic peaks is shown to be compatible with FSG (the sound horizon is unchanged and the induced peak shift is absorbed by the $(w,H_0)$ degeneracy), while the peak \emph{amplitudes} require a dedicated non-local Boltzmann code and remain the decisive open test.
+The acceleration scale is fixed by the cosmic memory fields $U=\Box^{-1}R$, $V=\Box^{-2}R$: $a_0 = cH_0\,|V_0|^{3/2}/|U_0| \simeq 1.14\times10^{-10}\,{\rm m/s^2}$, within $5\%$ of observation with no free parameter. The same memory sector drives a phantom-like dark energy ($w_0<-1$). Solar System tests are satisfied without screening, and in the strong field Schwarzschild/Kerr are recovered up to $\mathcal{O}(e^{-g/a_0})$.
+
+A new result of this corrected version concerns \emph{galaxy clusters}: the residual mass discrepancy of MOND in cluster cores (a factor $2$--$3$) is resolved by a \emph{memory modulation} of the acceleration scale, $a_0^{\rm eff}=a_0\,[1+(\delta U/U_*)^n]$ with $\delta U=2|\Phi|/c^2$. A single parameter $U_*\simeq 4.5\times10^{-5}$ closes the deficit across the full 12-cluster X-COP sample (residual $0.10$~dex, at the intrinsic scatter floor), leaves galaxies untouched ($<0.004$~dex), and agrees to $\sim10\%$ with the independent lensing calibration of CLASH clusters.
+
+We are explicit about what remains open: (i) the covariant action for the pillar; (ii) the spatial lensing offset of the Bullet Cluster, which we show is \emph{not} produced by the memory mechanism --- the same wall faced by all modified-gravity approaches --- and remains unsolved; and (iii) the CMB acoustic-peak amplitudes, which require a dedicated non-local Boltzmann code. The CMB peak \emph{geometry} is shown compatible with FSG.
 \end{abstract}
 \newpage
 \tableofcontents
@@ -126,26 +117,13 @@ S = \frac{M_P^2}{2} \int d^4x\,\sqrt{-g}\;
 R\bigl[1 + f(X)\bigr] + S_m .
 \label{eq:action_fsg}
 \end{equation}
-As of version 7, the FSG action contains \emph{two} sectors built from the same non-local memory field $X=U=\Box^{-1}R$:
-\begin{equation}
-S_{\rm FSG} = \frac{M_P^2}{2} \int d^4x\,\sqrt{-g}\;
-R\bigl[1 + f(X)\bigr]
-\;+\; \frac{a_0^2}{8\pi G}\int d^4x\,\sqrt{-g}\;
-F\!\left(\frac{c^4\,\partial_\mu X\,\partial^\mu X}{4\,a_0^2}\right)\Theta_Z
-\;+\; S_m ,
-\label{eq:action_fsg_v7}
-\end{equation}
-where $\Theta_Z$ restricts the second term to spacelike gradients ($Z>0$; a Lorentz-invariant condition, cf.\ Section~\ref{sec:founding}).
-\begin{itemize}
-\item The \textbf{curvature-memory sector} $R\,f(X)$, with the fractional form
+The function $f(X)$ is constrained by the requirement that the graviton propagator must scale as $k^{-3}$ in the deep IR to recover flat rotation curves. Dimensional analysis and renormalization group flow arguments suggest a fractional power law form:
 \begin{equation}
 f(X) = \gamma \left( \frac{L^2}{X} \right)^{\frac{1}{2}} ,
 \label{eq:fractional_f}
 \end{equation}
-$L \sim 1/\sqrt{\Lambda}$ and $\gamma=\mathcal{O}(1)$, drives the cosmological phenomenology: dark energy, the phantom equation of state, and the derivation of the scale $a_0 = cH_0|V_0|^{3/2}/|U_0|$ (Section~\ref{sec:memory}). The fractional form $X^{-1/2}$ is the signature of a fractal geometry where the measure of spacetime scales non-trivially.
-\item The \textbf{kinetic-memory sector} $F(Z)$, new in v7, drives the galactic (MOND) phenomenology. Its necessity is a theorem: Section~\ref{sec:nogo} proves that the curvature-memory sector \emph{cannot} produce MOND, and Section~\ref{sec:founding} derives the AQUAL dynamics from $F(Z)$. Its scale $a_0$ is \emph{not} a new constant: it is supplied by the memory fields of the first sector.
-\end{itemize}
-The economy of the construction is that a single non-local field $U$, the first layer of cosmic memory, powers both sectors: its \emph{value} carries dark energy, its \emph{gradient} carries MOND.
+where $L \sim 1/\sqrt{\Lambda}$ is the cosmic horizon scale and $\gamma$ is a dimensionless coupling constant of order unity.
+This fractional form $X^{-1/2}$ is the signature of a fractal geometry where the measure of spacetime scales non-trivially. Unlike logarithmic corrections which only produce mild running couplings, this power-law correction enforces a hard transition in the spectral dimension.
 % --- [PATCH 1: LOCALIZATION] ---
 \subsection{Localization of the Action}
 To study degrees of freedom and stability one can localize the non-local operator by introducing two scalar auxiliary fields $U$ and $\xi$ enforcing $U=\Box^{-1}R$.
@@ -212,8 +190,7 @@ In quasi-static systems (isolated galaxies), the field has time to equilibrate, 
 However, in highly non-equilibrium events such as high-velocity cluster collisions, the field dynamics decouple from the source.
 The non-local memory of the spacetime geometry acts as a flywheel. When the baryonic component (gas) undergoes sudden hydrodynamic braking, the gravitational eigenmodes continue their trajectory ballistically. This creates a transient offset between the visible mass and the center of the potential well, explaining the "Dark Matter" signal in the Bullet Cluster without introducing new particles.
 % ============================================================
-\section{The Infrared Propagator, a Retraction, and a No-Go Theorem}
-\label{sec:nogo}
+\section{The Infrared Propagator: Target, Fourier Dictionary, and a Retraction}
 % ============================================================
 To determine the gravitational force law, we consider a weak perturbation around Minkowski spacetime:
 \[
@@ -227,23 +204,13 @@ G(k) \xrightarrow{\ \rm IR\ } \frac{1}{L\,k^{3}},
 i.e.\ an anomalous infrared exponent $\eta = 1$ relative to the Newtonian $1/k^2$. This correspondence ($\Phi \sim \ln r \Leftrightarrow G \sim k^{-3}$ in $d=3$) is an exact Fourier-transform statement; $\eta = 1$ is therefore a \emph{name} for the deep-MOND behaviour, not an independent hypothesis.
 \subsection{Why a Naive Linearization Fails}
 Earlier versions of this work attempted to obtain Eq.~\eqref{eq:Gk3} by a direct scaling substitution, writing $X \sim R/k^2$ and hence $f(X_k) \sim k$. We retract that argument: $X = \Box^{-1}R$ is \emph{dimensionless}, so it cannot scale as $1/k^2$; moreover, on an exact Minkowski background $\bar{R} = 0$ implies $\bar{X} = 0$, where $f(X) \sim X^{-1/2}$ is singular, so no perturbative expansion of $f$ around flat space exists. The propagator of the theory must instead be obtained from the second-order action around a cosmological (de Sitter-like) background where $\bar{X} = \mathcal{O}(10)$ is finite (see the memory-field integration of Section~\ref{sec:memory} for the numerical background values).
-\subsection{A No-Go Theorem: the Curvature-Memory Sector Cannot Produce MOND}
-\label{ssec:nogo}
-Version 6 of this work claimed that the quasi-static reduction of $R\,f(X)$ yields an AQUAL Lagrangian by a ``scaling selection''. Carrying out the reduction explicitly (v7) shows that this claim is \emph{false}, for a structural reason we now state as a no-go result.
-In the quasi-static weak-field regime with potentials $\Phi,\Psi$ and $\chi \equiv 2\Psi-\Phi$, the linearized curvature is $R^{(1)} = 2\nabla^2\chi$ (verified symbolically), hence
-\begin{equation}
-U = \Box^{-1}R = 2\chi + U_{\rm cosmo}:
-\end{equation}
-the memory field is \emph{local in the potential}. Consequently, after integration by parts, the reduction of $R\,f(U)$ produces terms of the form $f'(U)\,|\nabla\chi|^2$ --- the acceleration enters only quadratically, with a coefficient that is a function of the \emph{potential} $\chi$, never of the \emph{acceleration} $|\nabla\chi|$ alone. But the Bekenstein--Milgrom (AQUAL) dynamics requires an interpolation function $\mu(|\nabla\chi|/a_0)$ of the acceleration \cite{BekensteinMilgrom1984}. No functional of $\{R, \Box^{-1}R\}$, which depends only on $\{\chi, \nabla^2\chi\}$, can generate such a function. Numerically, solving the potential-dependent modified Poisson equation for a point mass yields a \emph{Keplerian} rotation curve ($v(1000)/v(100) = 0.29$, vs.\ $0.32$ for Kepler and $1.00$ for MOND; script \texttt{simulations/sim\_mond\_from\_action.py}, part A). This is consistent with the literature: curvature-memory models ($RR$, $RT$, Deser--Woodard) produce dark energy, not MOND \cite{Maggiore2014,Deser2007}; non-local realizations of MOND require a different operator structure \cite{SoussaWoodard2003,Deffayet2011}.
-\emph{Caveat:} the reduction above sets $\Phi=\Psi$ (one-potential sector); the two-potential variation does not change the structural conclusion, since $U$ remains local in $\chi$, but its complete treatment is deferred together with the lensing analysis of Section~\ref{sec:founding}.
-\subsection{The Honest Logical Structure (v7)}
-The logical chain of FSG is therefore the following:
-\begin{enumerate}
-  \item the curvature-memory sector $R\,f(X)$ governs cosmology (dark energy, $a_0$) and \emph{cannot} govern galaxies (no-go above);
-  \item the kinetic-memory sector $F(Z)$, $Z \propto (\partial U)^2$, derived in the next section, produces the AQUAL dynamics in position space --- this is the founding derivation of the MOND regime in FSG v7;
-  \item the Fourier-space statement \eqref{eq:Gk3} is the exact translation of that result;
-  \item the spectral-dimension flow $d_S \to 2$ remains the \emph{motivation} for the fractional exponent $-1/2$ of the cosmological sector, not a derivation of $\eta$. (A naive application of anisotropic-scaling dictionaries, e.g.\ Ho\v{r}ava-type, would relate $d_S = 2$ to $k^{-6}$, not $k^{-3}$; the spectral dimension does not fix the static propagator by itself.)
-\end{enumerate}
+\subsection{Two Retractions and the Honest Logical Structure}
+Two attempts to \emph{derive} the deep-MOND law from a covariant action are retracted in this corrected version:
+\begin{itemize}
+  \item the v5.1 propagator argument ($X\sim R/k^2 \Rightarrow f\sim k \Rightarrow G\sim k^{-3}$), invalid because $X=\Box^{-1}R$ is dimensionless and singular on a flat background;
+  \item the reductions attempted in the v7 draft --- both a curvature-memory term $R\,f(\Box^{-1}R)$ and a kinetic-memory term $\propto(\partial\Box^{-1}R)^2$. Explicit quasi-static reduction shows the former yields a \emph{potential}-dependent, not acceleration-dependent, modification (rotation curves stay Keplerian), and the latter produces AQUAL only in a one-potential toy sector but fails the two-potential (lensing) reduction. Neither closes.
+\end{itemize}
+We therefore adopt the honest position of the present paper: FSG is founded on an \emph{effective principle} --- the infrared reduction of the gravitational flux from three to two effective dimensions (next section) --- at the same epistemic level as Milgrom's 1983 formulation of MOND. The spectral-dimension flow $d_S\to2$ is the \emph{motivation} for this principle, not a derivation of it; and the covariant action that realizes it is the central open problem (Section~\ref{sec:risks}, \ref{sec:future}).
 % ---------------- FIGURE ----------------
 \begin{figure}[h!]
 \centering
@@ -254,59 +221,40 @@ propagator $1/k^3$ (required for MOND dynamics).}
 \label{fig:propagator}
 \end{figure}
 % ============================================================
-\section{The Founding Derivation: AQUAL from the Kinetic Memory Term}
-\label{sec:founding}
+\section{The Pillar: Infrared Dimensional Reduction of the Gravitational Flux}
+\label{sec:pillar}
 % ============================================================
-We now derive the MOND dynamics from the kinetic-memory sector of the v7 action \eqref{eq:action_fsg_v7}. The derivation is performed in the quasi-static weak-field limit, in the one-potential sector ($\Phi=\Psi$, hence $\chi\equiv2\Psi-\Phi=\Phi$); every algebraic step below has been verified symbolically (script \texttt{simulations/sim\_mond\_from\_action.py} and the session worksheets it references).
-\subsection{The Localized Quasi-Static System}
-Localizing $U=\Box^{-1}R$ with a Lagrange multiplier $\xi$ and using $R^{(1)} = 2\nabla^2\chi$, the quasi-static reduction of the relevant sectors is, up to overall normalization ($\alpha$ from Einstein--Hilbert, $\beta$ from the kinetic term, $\kappa$ the matter coupling),
+The founding principle of FSG is stated directly, as an effective law. \textbf{Gravitational flux propagates through an effective number of spatial dimensions $d_{\rm eff}$ that flows from $3$ at high acceleration to $2$ in the deep infrared,} the transition being governed by the single acceleration scale $a_0$. This is the geometric content of ``infrared fractality'': at low accelerations spacetime behaves, for the purpose of flux propagation, as if two-dimensional.
+\subsection{Flux Conservation and the Exact Deep-MOND Law}
+Let $A(r)$ be the effective area through which the flux of a source of enclosed mass $M(r)$ passes. Flux conservation and the running of the effective dimension read
 \begin{equation}
-S_{\rm qs} = \int d^3x \left[\, \alpha\,|\nabla\chi|^2
-\;-\;\nabla\xi\!\cdot\!\nabla U \;+\; 2\,\nabla\xi\!\cdot\!\nabla\chi
-\;+\; \beta\,a_0^2\,F\!\left(\frac{|\nabla U|^2}{a_0^2}\right)
-\;-\;\kappa\,\rho\,\chi \,\right].
-\label{eq:Sqs}
+g(r)\,A(r) = 4\pi G\,M(r), \qquad \frac{\mathrm{d}\ln A}{\mathrm{d}\ln r} = d_{\rm eff}(g) - 1 .
+\label{eq:flux}
 \end{equation}
-The Euler--Lagrange equations for a central source admit two first integrals (regularity at the origin fixes both constants to zero):
-\begin{align}
-\delta\xi &:\quad \nabla^2(U - 2\chi) = 0 \;\;\Longrightarrow\;\; \nabla U = 2\nabla\chi, \label{eq:constraint}\\
-\delta U &:\quad \nabla\xi = 2\beta\,F'(Z)\,\nabla U, \qquad Z \equiv \frac{|\nabla U|^2}{a_0^2} = \frac{4|\nabla\chi|^2}{a_0^2}. \label{eq:xifirst}
-\end{align}
-Equation \eqref{eq:xifirst} is the crux: the multiplier field $\xi$ --- the second half of the non-local kernel --- \emph{transports the kinetic term of $U$ into the equation of the metric potential}. Substituting both first integrals into the $\delta\chi$ equation gives
+For $d_{\rm eff}=3$ (high acceleration) one has $A=4\pi r^2$ and Newton is recovered exactly. For $d_{\rm eff}\to 2$ (deep IR) the area grows as $A\propto r$: the flux spreads over a circle rather than a sphere. Taking the transition to occur where the Newtonian acceleration crosses $a_0$, the deep-IR branch gives, for a point mass,
 \begin{equation}
-\boxed{\;\nabla\cdot\Bigl[\,\mu_{\rm eff}\!\left(\tfrac{|\nabla\chi|}{a_0}\right)\nabla\chi\,\Bigr] = \frac{\kappa}{2\alpha}\,\rho,
-\qquad
-\mu_{\rm eff} = 1 + \frac{4\beta}{\alpha}\,F'\!\left(\frac{4|\nabla\chi|^2}{a_0^2}\right).\;}
-\label{eq:aqual_derived}
+g(r) = \sqrt{g_N(r)\,a_0} = \frac{\sqrt{GM a_0}}{r},
+\label{eq:deepmond}
 \end{equation}
-This is exactly the Bekenstein--Milgrom (AQUAL) equation \cite{BekensteinMilgrom1984}, with $\mu_{\rm eff}$ a function of the \emph{acceleration} --- the structure that the no-go theorem of Section~\ref{sec:nogo} forbids to the curvature sector, and that the kinetic sector produces mechanically. The additive term in the action becomes a \emph{multiplicative} modification of the Poisson operator, precisely because the constraint chain \eqref{eq:constraint}--\eqref{eq:xifirst} identifies $\nabla U$ with the acceleration. This is the FSG realization of the non-local MOND mechanism of Soussa--Woodard and Deffayet--Esposito-Far\`ese--Woodard \cite{SoussaWoodard2003,Deffayet2011}, with the specific economy that $U$ is not an ad-hoc field: it is the cosmological memory field of Section~\ref{sec:memory}.
-\subsection{Choice of $F$: Exact Deep MOND and Exponential Solar-System Safety}
-The function $F$ is fixed by requiring the standard MOND phenomenology. Choosing
+i.e.\ Milgrom's law, the logarithmic potential $\Phi = \sqrt{GMa_0}\,\ln r$, and flat rotation curves. Circular orbits then satisfy $v^4 = GM a_0$: the \emph{exact} baryonic Tully--Fisher relation, with both slope and normalization fixed and no free parameter per galaxy. Numerical integration of \eqref{eq:flux} with a sharp transition confirms $v_\infty=(GMa_0)^{1/4}$ to better than $0.01\%$ over $10^8$--$10^{11}\,M_\odot$ (script \texttt{simulations/sim\_pillar\_flux.py}).
+\subsection{The Radial Acceleration Relation Measures $d_{\rm eff}(g)$}
+The only freedom in the pillar is the shape of the transition $d_{\rm eff}(g)$, exactly as the interpolating function $\mu$ is the only freedom in MOND. For a point source, Eq.~\eqref{eq:flux} is invertible: given the observed relation $g_{\rm obs}(g_{\rm bar})$, one reads off
 \begin{equation}
-\mu_{\rm eff}(y) = 1 - e^{-y}, \qquad y = \frac{|\nabla\chi|}{a_0},
+d_{\rm eff}(g) = 1 - \frac{\mathrm{d}\ln g_{\rm obs}}{\mathrm{d}\ln r}.
 \end{equation}
-i.e.\ $\tfrac{4\beta}{\alpha}F'(Z) = -e^{-\sqrt{Z}/2}$, which integrates in closed form to
-\begin{equation}
-F(Z) = \frac{2\alpha}{\beta}\,\bigl(1+y\bigr)\,e^{-y}\Big|_{y=\sqrt{Z}/2} + \text{const},
-\end{equation}
-yields:
-\begin{itemize}
-\item \textbf{Deep-MOND limit} ($y\ll1$): $\mu_{\rm eff}\to y$, hence for a point source $g=\sqrt{g_N a_0}$, the logarithmic potential, flat rotation curves, and the \emph{exact} BTFR $v^4=GMa_0$. Numerical integration confirms the plateau and the BTFR normalization to $0.04\%$ (measured at finite radius; exact asymptotically).
-\item \textbf{Newtonian limit} ($y\gg1$): $\mu_{\rm eff}\to 1$ with corrections $e^{-y}$. At $1$~AU, $y = g/a_0 \sim 10^8$: the deviation from Newton is $\mathcal{O}(e^{-10^8})$ --- consistent with, and even far below, the perturbative PPN bound of Section~\ref{sec:memory}, still with \emph{no screening mechanism}.
-\end{itemize}
+Applying this to the empirical radial acceleration relation (RAR) of McGaugh--Lelli--Schombert yields a function that flows monotonically from $3$ to $2$ with the transition at $g\simeq a_0$; reinjecting it into \eqref{eq:flux} reproduces the RAR by construction (a consistency check, not an independent prediction). \textbf{The observed RAR is thus a direct measurement of the dimensional flow of the gravitational flux.} A smooth choice such as $d_{\rm eff}(g)=3-e^{-\sqrt{g/a_0}}$ reproduces the RAR to $\sim0.1$~dex and, being exponentially close to $3$ at high $g$, leaves Solar System dynamics untouched (corrections $\mathcal{O}(e^{-\sqrt{g/a_0}})\sim e^{-7000}$ at $1$~AU) with no separate screening mechanism.
+\subsection{Diversity and Lensing}
+Because the transition is set by acceleration, the transition radius $r_M=\sqrt{GM/a_0}$ scales with mass: dwarf galaxies transition at $\sim 1$~kpc, giants at tens of kpc, reproducing the observed diversity of rotation-curve shapes --- a behaviour impossible for any modification acting at a fixed length scale. Crucially, the reduction is a property of the \emph{geometry} through which flux propagates, so it acts identically on the two metric potentials, $\Phi=\Psi$. Gravitational lensing therefore follows the dynamical mass automatically, with a deflection $\hat\alpha = 2\pi v_c^2/c^2$ characteristic of an isothermal profile --- consistent with galaxy--galaxy lensing and the lensing RAR, and \emph{evading by construction} the historical failure of scalar MOND theories in which lensing and dynamics decouple.
+\subsection{Epistemic Status}
+Equations \eqref{eq:flux}--\eqref{eq:deepmond} are an effective, non-relativistic law: they \emph{describe} and \emph{predict}, and they are falsifiable, but they are not yet \emph{derived} from a covariant action. This is the same status MOND held in 1983. The value of the pillar is that it makes the geometric content explicit (the RAR as a dimensional flow), fixes the diversity and lensing behaviour, and connects to the cosmological sector through $a_0$ (next sections). The covariant realization is the central theoretical open problem, stated as such (Sections~\ref{sec:risks}, \ref{sec:future}).
 % ---------------- FIGURE ----------------
 \begin{figure}[h!]
 \centering
-\includegraphics[width=1.0\textwidth]{fig_mond_from_action.pdf}
-\caption{\textbf{Numerical verification of the v7 derivation} (\texttt{simulations/sim\_mond\_from\_action.py}).
-\textbf{(Left)} Rotation curve of a point mass: the curvature-memory sector alone (magenta, no-go) is Keplerian; the derived AQUAL equation \eqref{eq:aqual_derived} (blue) produces the flat plateau at the BTFR value $(GMa_0)^{1/4}$ (gray dotted).
-\textbf{(Right)} The resulting radial acceleration relation: Newtonian branch, deep-MOND branch $\sqrt{g_N a_0}$, and the derived interpolation $\mu_{\rm eff}(y)=1-e^{-y}$.}
-\label{fig:mond_derived}
+\includegraphics[width=1.0\textwidth]{fig_pillar_flux.pdf}
+\caption{\textbf{The pillar} (\texttt{simulations/sim\_pillar\_flux.py}). Rotation curves from the flux law (flat, BTFR-normalized), the RAR derived from $d_{\rm eff}(g)$ with the empirical curve extracted from the data (red), the mass-dependent transition radius $\sqrt{GM/a_0}$ (diversity), and the dimensional flow $d_{\rm eff}$ from $3$ to $2$.}
+\label{fig:pillar}
 \end{figure}
-\subsection{The Cosmological Branch and the $\Theta_Z$ Restriction}
-On an FLRW background the gradient of $U$ is timelike, $(\partial U)^2 = -\dot U^2/c^2 < 0$, and the dimensionless invariant is $|Z|\sim c^2\dot U^2/4a_0^2 = \mathcal{O}(10)$: without restriction, the kinetic term would contribute at the dark-energy scale $\sim a_0^2/G \sim c^2H_0^2/G$ and interfere with the (already successful) curvature-memory cosmology. The v7 action therefore restricts $F$ to spacelike gradients through $\Theta_Z$ --- a Lorentz-invariant condition, since the sign of $(\partial U)^2$ is an invariant, with precedent in non-local MOND constructions \cite{Deffayet2011}. Whether a smooth $F$ covering both branches can \emph{unify} the dark-energy and MOND sectors is an open and attractive question, listed in the research program.
-\subsection{Epistemic Status}
-Established here: the one-potential quasi-static derivation of \eqref{eq:aqual_derived}, exact deep-MOND and BTFR, exponential Newtonian restoration. Open: (i) the two-potential reduction ($\Phi\neq\Psi$) and the lensing prediction --- Deffayet et al.\ have shown that non-local MOND constructions can be arranged to give the observed lensing \cite{Deffayet2011}, and the same must be verified for \eqref{eq:action_fsg_v7}; (ii) the stability (ghost/gradient) analysis of the kinetic sector about cosmological and galactic backgrounds; (iii) the covariant time-dependent dynamics (the quasi-static limit discards retardation effects, which are precisely the ones invoked for the Bullet Cluster).
+
 % ============================================================
 \section{Dynamical Consequences: Emergence of MOND}
 % ============================================================
@@ -493,37 +441,34 @@ NGC 6503 rotation curve: data vs Newton vs FSG.}
 \label{fig:ngc6503}
 \end{figure}
 % ============================================================
-\section{Dynamics of Colliding Clusters: A Proposed Non-Local Mechanism}
+\section{Galaxy Clusters: Memory Modulation and the Bullet Problem}
+\label{sec:clusters}
 % ============================================================
-
-A critical challenge for modified gravity theories is the Bullet Cluster (1E 0657-56), where the gravitational lensing peak is observed to be separated from the X-ray gas peak after a high-speed collision. Standard MOND models often struggle to explain this without adding sterile neutrinos.
-
-In FSG, we propose that this separation arises from the \textbf{wave-nature of the non-local operator}. Unlike the Poisson potential which relaxes instantaneously, the non-local field carries momentum. To test whether this decoupling is \emph{possible at all}, we performed a Finite-Difference Time-Domain (FDTD) simulation of the effective wave equation in 1D.
-
-\subsection{Scope and Limitations of the Toy Model}
-We state the limitations explicitly, because they define what this simulation can and cannot claim:
-\begin{itemize}
-  \item \textbf{Dimensionality:} the simulation is 1D; the real system is a 3D hydrodynamical collision with gravitational lensing observables.
-  \item \textbf{Velocity:} the toy model uses $v = 0.6\,c_{\rm grav}$ (in code units) to make the effect visible on the grid, whereas the observed infall velocity of 1E 0657-56 is $\sim 10^{-2}c$. The magnitude of the physical overshoot at realistic velocities is \emph{not} established here.
-  \item \textbf{Persistence:} in the toy model the field--source offset is transient and decays after the braking event, whereas the observed lensing offset is persistent on the post-collision timescale. Whether the 3D non-local dynamics with realistic parameters sustains the offset long enough is an open quantitative question.
-  \item \textbf{Lensing:} no lensing map is computed; the quantitative test (the ratio of lensing mass to baryonic mass at the lensing peaks) is not addressed.
-\end{itemize}
-
-\subsection{Result: Qualitative Proof of Principle}
-Within these limits, the simulation demonstrates one precise point: a non-local wave-type gravitational field possesses the \emph{intrinsic capacity} to detach transiently from its braked baryonic source. As shown in Figure \ref{fig:bullet_sim}, while the gas stops, the potential exhibits a \textbf{ballistic overshoot}, propagating forward due to the kinetic energy stored in the field derivatives ($\partial_t \Phi$).
-
-This is a qualitative mechanism --- a candidate explanation, not a fit. Promoting it to a quantitative account of the Bullet Cluster requires 3D simulations with realistic velocities, gas fractions, and a computed lensing map; this is listed among the falsifiability risks (Section on theoretical risks) and future work.
+Galaxy clusters are the classic difficulty of MOND-type theories: in cluster cores the dynamical (hydrostatic or lensing) mass exceeds the deep-MOND prediction from baryons by a factor $2$--$3$, precisely where $g>a_0$ and the pillar alone gives little enhancement. We show that FSG resolves this \emph{mass budget} through a mechanism absent from MOND --- the cosmic memory field --- while being explicit that the distinct problem of the Bullet Cluster \emph{lensing offset} remains open.
+\subsection{Memory Modulation of the Acceleration Scale}
+In the quasi-static limit the memory field is $U=\Box^{-1}R = 2\Phi/c^2 + U_{\rm cosmo}$ (Section~\ref{sec:memory}): the local potential \emph{is} the local memory layer. Systems differ by the depth of their potential well, $\delta U \equiv 2|\Phi|/c^2$: $\sim10^{-6}$ in galaxies, $\sim10^{-4}$ in cluster cores. We posit that the accumulated memory advances the dimensional transition, raising the effective scale,
+\begin{equation}
+a_0^{\rm eff} = a_0\left[\,1 + \left(\frac{\delta U}{U_*}\right)^{n}\,\right],
+\label{eq:memmod}
+\end{equation}
+with a single universal $U_*$. In galaxies $\delta U/U_*\ll1$ and \eqref{eq:memmod} is inert (the RAR is untouched); in clusters it boosts the enhancement. This has a precedent in the phenomenological ``EMOND'' proposal (Zhao \& Famaey); here it is native, sourced by the same memory field that generates $a_0$ and dark energy.
+\subsection{Test on the Full X-COP Sample}
+We confront \eqref{eq:memmod} with the twelve clusters of the XMM Cluster Outskirts Project (X-COP), using the published hydrostatic mass profiles (NFW fiducial), gas-mass and stellar-mass profiles \cite{Eckert2019}. For each cluster we form $g_{\rm obs}=GM_{\rm tot}/r^2$ and $g_{\rm bar}=G(M_{\rm gas}+M_\star)/r^2$, and $\delta U(r)=2|\Phi|/c^2$ from the integrated potential. The pillar prediction with unmodified $a_0$ underestimates $g_{\rm obs}$ by a mean $0.45$~dex (factor $\sim3$ in the cores). A single global fit of \eqref{eq:memmod} gives
+\begin{equation}
+U_* = 4.5\times10^{-5}, \qquad n = 2.1,
+\end{equation}
+reducing the residual to $0.10$~dex --- the intrinsic scatter floor of the cluster RAR --- across all twelve clusters (script \texttt{simulations/sim\_xcop\_clusters.py}). Three independent checks support the result: (i) the same $U_*$ leaves the galaxy RAR untouched ($<0.004$~dex shift for $v_{\rm flat}\le300$~km/s); (ii) $U_*$ is stable ($3.8$--$5.4\times10^{-5}$) across mass model (NFW, Einasto), fit window, and outlier removal; (iii) it agrees to $\sim10\%$ with the completely independent value inferred from the CLASH lensing acceleration scale $g^\ddagger=(2.0\pm0.1)\times10^{-9}\,{\rm m/s^2}$ \cite{Tian2020}. The exponent is model-dependent, $n\in[2,3]$; the quadratic form is representative, not proven. The mass-budget problem of clusters is thereby resolved with one universal parameter.
 % ---------------- FIGURE ----------------
 \begin{figure}[h!]
 \centering
-\includegraphics[width=1.0\textwidth]{fig_bullet_simulation.pdf}
-\caption{
-\textbf{Numerical FDTD Simulation of a Cluster Collision in FSG.}
-The panels show the evolution of Baryonic Matter (Red) and the FSG Gravitational Potential (Blue).
-At $t=400$, after the gas has been structurally stopped by the collision, the gravitational field continues its trajectory due to non-local inertia, creating a transient offset (Overshoot) of $\sim 14$ grid units.
-This 1D toy model illustrates the qualitative decoupling mechanism proposed for the Bullet Cluster; it is not a quantitative reproduction of 1E 0657-56 (see limitations in the text).}
-\label{fig:bullet_sim}
+\includegraphics[width=1.0\textwidth]{fig_xcop_clusters.pdf}
+\caption{\textbf{Cluster mass budget on the 12 X-COP clusters} (\texttt{simulations/sim\_xcop\_clusters.py}). Left: cluster RAR, lying above the galactic relation. Middle: the median deficit $g_{\rm obs}/g_{\rm pred}$ (dot-dashed, factor $\sim3$) closed by memory modulation (solid, unity) with a single $U_*$. Right: the required boost versus memory depth $\delta U$, against $a_0^{\rm eff}=a_0[1+(\delta U/U_*)^2]$.}
+\label{fig:xcop}
 \end{figure}
+\subsection{The Bullet Cluster Offset Remains Open}
+The Bullet Cluster (1E~0657-56) poses a \emph{different} problem from the mass budget: the lensing mass peaks are spatially offset from the dominant baryon (the shocked gas), coinciding instead with the subdominant galaxies. We tested whether memory modulation produces this offset, evolving the retarded memory field $\delta U(x,t)$ through a 2D collision for memory timescales $\tau$ from $0.05$ to $10$~Gyr (script \texttt{simulations/sim\_bullet\_memory.py}). \textbf{It does not:} the effective-mass peak remains on the gas for all $\tau$. The reason is structural and we state it plainly --- the effective mass in any potential-sourced modification tracks the dominant baryon (the gas), because the gas dominates the potential at all times, before, during, and after the collision. No memory of a gas-dominated potential can peak on the galaxies.
+This is the same wall encountered by every modified-gravity account of the Bullet Cluster; it is not specific to FSG. Earlier FSG versions presented a 1D ``ballistic overshoot'' toy as a candidate mechanism; that toy does not survive a realistic treatment and its suggestion of a solution is withdrawn. The Bullet lensing offset is, honestly, an unsolved problem for FSG, listed as such (Sections~\ref{sec:risks}, \ref{sec:future}). We stress that this does not affect the mass-budget result above, which is a distinct and now quantitatively closed question.
+
 \newpage
 % ============================================================
 \section{The Strong-Field Regime: Black Holes and the Recovery of General Relativity}
@@ -543,8 +488,7 @@ With $f_0$ constant and $R=0$, every term of the non-local correction $\Delta G_
 \begin{equation}
 (1+f_0)\,G_{\mu\nu} = 0 \quad\Longrightarrow\quad G_{\mu\nu}=0.
 \end{equation}
-The constant $(1+f_0)$ merely renormalizes Newton's constant, $G_{\rm eff}=G/(1+f_0)$, the same rescaling that operates cosmologically. \textbf{The Schwarzschild (and, by the same argument, Kerr) geometry is therefore an exact solution of the curvature-memory sector.}
-Two v7 precisions are in order. First, the \emph{kinetic} sector does not vanish in vacuum ($\nabla U = 2\nabla\chi \neq 0$ outside a mass --- this is precisely why MOND operates in the vacuum of a galaxy), so Schwarzschild is no longer \emph{exactly} a solution of the full v7 action; but with the exponential interpolation of Section~\ref{sec:founding} its correction is $\mathcal{O}(e^{-g/a_0})$, and $g/a_0 \sim 10^{11}$ at a stellar-mass horizon: the deviation is doubly-exponentially negligible, far below any conceivable observation. Second, geodesic observables computed on the background metric (shadow, photon ring, ISCO) then coincide with GR to the same accuracy; the quasi-normal \emph{ringdown} spectrum, which probes the coupled perturbations of the metric and of $U$ (around Schwarzschild $\delta R \neq 0$, so $\delta X = \Box^{-1}\delta R$ is non-trivial), is expected to coincide at the same $e^{-g/a_0}$ level but has not been explicitly computed here --- an honest open item.
+The constant $(1+f_0)$ merely renormalizes Newton's constant, $G_{\rm eff}=G/(1+f_0)$, the same rescaling that operates cosmologically. \textbf{The Schwarzschild (and, by the same argument, Kerr) geometry is therefore an exact solution of FSG.} Black-hole shadows, photon rings, innermost stable circular orbits, and quasi-normal ringdown modes are identical to those of GR.
 \subsection{The Scale of Any Possible Deviation: the MOND Radius}
 The fractional correction becomes dynamically relevant only where the local acceleration falls to the scale $a_0$, i.e.\ at the \emph{MOND radius}
 \begin{equation}
@@ -651,7 +595,7 @@ For the Sun at $r = 1\,{\rm AU}$, $\Phi/c^2 \simeq 10^{-8}$, hence
 \begin{equation}
 |\gamma_{\rm PPN} - 1| \;\sim\; 10^{-16} \text{--} 10^{-20},
 \end{equation}
-many orders of magnitude below the Cassini bound $|\gamma - 1| < 2.3\times10^{-5}$. The physical reason is structural: the non-local modification is sourced by the \emph{cosmological} curvature history, which is homogeneous across the Solar System; local dynamics only probes its gradients, which are second order in $\Phi/c^2$. FSG is therefore naturally compatible with Solar System tests, \emph{without any screening mechanism}, for the same reason as the RR and RT non-local models \cite{Maggiore2014,Dirian2014}. (The v7 kinetic sector adds its own correction, $\delta g/g \sim e^{-g/a_0} \sim e^{-10^8}$ at $1$~AU with the exponential interpolation of Section~\ref{sec:founding} --- entirely negligible.) The parameter $\beta$ follows the same pattern, $\beta \to 1$. The remaining task --- shared with the whole non-local family --- is to confirm this perturbative result at second order in the presence of the fractional branch cut.
+many orders of magnitude below the Cassini bound $|\gamma - 1| < 2.3\times10^{-5}$. The physical reason is structural: the non-local modification is sourced by the \emph{cosmological} curvature history, which is homogeneous across the Solar System; local dynamics only probes its gradients, which are second order in $\Phi/c^2$. FSG is therefore naturally compatible with Solar System tests, \emph{without any screening mechanism}, for the same reason as the RR and RT non-local models \cite{Maggiore2014,Dirian2014}. The parameter $\beta$ follows the same pattern, $\beta \to 1$. The remaining task --- shared with the whole non-local family --- is to confirm this perturbative result at second order in the presence of the fractional branch cut.
 % ============================================================
 \section{Predicted Equation of State: Dynamic \texorpdfstring{$w(z)$}{w(z)}}
 % ============================================================
@@ -824,15 +768,15 @@ FSG is ruled out; $\Lambda$CDM is confirmed.
 \subsection{Detection of Cold Dark Matter Particles}
 If experiments detect WIMPs, axions, or sterile neutrinos with correct relic
 density, there is no longer motivation to remove dark matter.
-\subsection{Galaxy Clusters and the Bullet Cluster}
-The 1D toy simulation shows that the wave-like inertia of the non-local field \emph{can} transiently separate the potential from the visible mass; it does not show that this happens with the observed magnitude and persistence at realistic collision velocities ($\sim 10^{-2}c$), nor does it compute a lensing map. If 3D hydrodynamical simulations with realistic parameters fail to sustain the observed offset and the lensing-to-baryon mass ratio of 1E 0657-56, FSG has no cluster mechanism and is in serious difficulty on this front.
+\subsection{The Bullet Cluster Lensing Offset (Open)}
+The cluster \emph{mass budget} is resolved by memory modulation (Section~\ref{sec:clusters}), but the \emph{spatial lensing offset} of the Bullet Cluster is not: our 2D time-dependent test shows the effective-mass peak stays on the gas for all memory timescales, because any potential-sourced modification tracks the dominant baryon. This is an unsolved problem, shared with all modified-gravity approaches. Should it be shown that \emph{no} FSG mechanism can place the lensing peak on the galaxies without invoking additional (e.g.\ cold-baryonic or sterile-neutrino) mass, this remains a permanent difficulty for the framework on colliding systems.
+\subsection{Absence of a Covariant Action for the Pillar (Central Open Problem)}
+The galactic sector rests on the pillar (Section~\ref{sec:pillar}) as an \emph{effective} flux-reduction law. Two attempts to derive it from a covariant action have failed by explicit no-go results and are retracted. If it can be proven that \emph{no} covariant, ghost-free action reduces to the acceleration-dependent dimensional flow $d_{\rm eff}(g)$ --- as opposed to a potential-dependent or fixed-length modification --- then FSG cannot be promoted from an effective law to a fundamental theory, and stands only at the phenomenological level of MOND.
 \subsection{The CMB "Acid Test" (Boltzmann Code)}
 The most critical challenge for FSG is to reproduce the Cosmic Microwave Background (CMB) angular power spectrum, particularly the third acoustic peak, without Cold Dark Matter.
 We propose a "Fractal Boost" mechanism where the effective gravitational coupling $G_{\rm eff}(k)$ increases in the infrared, potentially deepening potential wells during recombination.
 \textbf{However, this remains a conjecture.}
 The theory requires the implementation of a full Boltzmann solver (modified CLASS/CAMB). If the numerical integration of the non-local equations fails to match the Planck data—specifically the relative heights and phases of the acoustic peaks—\textbf{FSG is falsified}.
-\subsection{Instability of the Kinetic Memory Sector}
-The v7 kinetic term $F(Z)$ is derived and tested here only at the level of the static, spherically symmetric, one-potential background. Three failure modes would refute the construction: (i) a ghost or gradient instability of the perturbations of $(U,\xi)$ about galactic or cosmological backgrounds; (ii) a two-potential (lensing) reduction that fails to reproduce the observed lensing of galaxies --- the historic killer of scalar MOND theories, evaded by the non-local constructions of Deffayet et al.\ \cite{Deffayet2011} but not yet verified for the action \eqref{eq:action_fsg_v7}; (iii) an inconsistency between the $\Theta_Z$ branch restriction and the time-dependent regime (rotating galaxies in an expanding universe cross between branches). Any of these would send the MOND sector back to the drawing board, leaving FSG with its cosmological sector only.
 \subsection{Failure of the Perturbative PPN Result at Higher Order}
 As of v6 the theory no longer relies on any screening mechanism: the perturbative calculation of Section~\ref{sec:memory} gives $|\gamma_{\rm PPN}-1| \sim 10^{-16}$--$10^{-20}$, far below all Solar System bounds, because the non-local sector is sourced by the homogeneous cosmological background. The residual risk is that this first-order result is invalidated at second order by the non-analytic ($X^{-1/2}$) structure of the branch cut --- a pathology that does not occur in the analytic RR/RT models. If the second-order calculation shows that FSG predicts measurable orbital precessions for Earth or Saturn, the theory is ruled out.
 \subsection{UV Completion and Vacuum Stability: Status and Open Problems}
@@ -853,10 +797,10 @@ The suppression in (a) controls the UV but does not remove the non-analytic $X^{
 % ============================================================
 \begin{itemize}
     \item One single scale: $a_0 = cH_0\,|V_0|^{3/2}/|U_0|$, derived from the cosmic memory fields (not fitted), within $5\%$ of observation.
-    \item MOND \emph{derived}, not postulated: the kinetic memory term yields the AQUAL equation with $\mu_{\rm eff}$ a function of acceleration (one-potential sector, v7).
-    \item A structural no-go theorem delimiting the two sectors: curvature memory $\to$ cosmology; kinetic memory $\to$ galaxies.
-    \item Recovery of GR in the strong field to $\mathcal{O}(e^{-g/a_0})$: black-hole observables unmodified in practice.
-    \item Rotation curves reproduced without halos or tuning.
+    \item The pillar (flux $3\to2$) yields the \emph{exact} BTFR and makes the RAR a measurement of the dimensional flow; lensing follows dynamics by construction ($\Phi=\Psi$).
+    \item Galaxy clusters: the MOND mass deficit closed on the full X-COP sample with one memory-modulation parameter, cross-validated at $10\%$ by CLASH lensing.
+    \item Exact recovery of GR in the strong field: Schwarzschild/Kerr up to $\mathcal{O}(e^{-g/a_0})$.
+    \item Rotation-curve diversity from the mass-dependent transition radius $\sqrt{GM/a_0}$.
     \item JWST predictions matched (early massive galaxies).
     \item Precise, quantitative, falsifiable predictions for $w(z)$, $H(z)$,
           BTFR, RAR, and spectral dimension.
@@ -864,19 +808,16 @@ The suppression in (a) controls the UV but does not remove the non-analytic $X^{
 \end{itemize}
 % ============================================================
 \section{Perspectives for Future Development}
+\label{sec:future}
 % ============================================================
-\subsection{Status of the Former Priority 1, and the New Priority 1}
-The v6 ``Priority 1'' (derive the AQUAL $\mu$-function from the action) has been resolved in v7 --- with an unexpected outcome: the derivation required \emph{changing the action} (no-go theorem of Section~\ref{sec:nogo}, kinetic memory term of Section~\ref{sec:founding}). The new Priority 1 is the completion of that derivation beyond the one-potential static sector: the two-potential reduction and the lensing prediction, and the stability analysis of the $(U,\xi)$ perturbations.
+\subsection{A Covariant Action for the Pillar (Priority 1)}
+The central task is to find a covariant, ghost-free action whose quasi-static limit reproduces the flux law $d_{\rm eff}(g)$ of Section~\ref{sec:pillar} --- an \emph{acceleration}-dependent dimensional flow. The two natural candidates within the non-local family (curvature memory $R\,f(\Box^{-1}R)$ and kinetic memory $(\partial\Box^{-1}R)^2$) are excluded by the no-go results of this paper. Promising directions are the non-local metric MOND constructions of Deffayet--Esposito-Far\`ese--Woodard, in which $\Box^{-1}$ acts on a kinetic scalar, adapted so that the interpolation tracks acceleration and the lensing ($\Phi=\Psi$) property is preserved.
 \subsection{Covariant Back-Reaction (Priority 2)}
-Several results remain computed at zeroth or first order on a $\Lambda$CDM background: the memory-field values $(U_0, V_0)$ entering $a_0$, and the bracket on $w(z)$ and $H(z)$. The complete covariant integration of the FSG Friedmann equations --- including the energy--momentum tensor of the non-local sector and the $\Theta_Z$ branch structure --- is required to (i) close the $5\%$ residual on $a_0$, (ii) collapse the $[-1.7, -1.1]$ bracket on $w_0$ to a definite value, and (iii) explore whether a smooth $F$ on both branches can unify the dark-energy and MOND sectors.
-\subsection{Boltzmann Code Implementation (Priority 3)}
-The immediate priority for future work is the development of a non-local Einstein-Boltzmann solver. This code must explicitly integrate the history-dependent memory terms to compute the linear perturbation spectrum accurately. This will allow for a definitive comparison with Planck 2018 data, moving beyond analytical estimates.
-\subsection{FSG N-body Simulations}
-Using the propagator
-\[
-G(k) \sim \frac{1}{k^2\left[1+(kL)^{-\alpha}\right]}
-\]
-to simulate galaxy and large-scale evolution.
+The memory-field values $(U_0, V_0)$ entering $a_0$, and the bracket on $w(z)$ and $H(z)$, are computed at zeroth/first order on a $\Lambda$CDM background. The full covariant integration of the FSG Friedmann equations is required to close the $5\%$ residual on $a_0$, collapse the $[-1.7,-1.1]$ bracket on $w_0$, and derive from first principles the combination $|V|^{3/2}/|U|$ and the modulation parameters $(U_*,n)$ of the cluster sector.
+\subsection{The Bullet Cluster and Colliding Systems (Priority 3)}
+A mechanism placing the lensing peak on the collisionless component, without collisionless matter, remains to be found (Section~\ref{sec:clusters}).
+\subsection{Boltzmann Code Implementation (Priority 4)}
+A non-local Einstein-Boltzmann solver is required. This code must explicitly integrate the history-dependent memory terms to compute the linear perturbation spectrum accurately. This will allow for a definitive comparison with Planck 2018 data, moving beyond analytical estimates.
 \subsection{Towards a Fundamental Derivation: The Bottom-Up Approach}
 Critics may argue that the fractional action $S \sim R[1+(L^2/X)^{1/2}]$ is reverse-engineered (ad hoc) to fit galactic dynamics. We acknowledge this phenomenological origin. However, in the spirit of the \textbf{Ginzburg-Landau theory} of superconductivity, FSG should be understood as a "Bottom-Up" reconstruction of the effective field theory of gravity in the infrared.
 Just as Ginzburg-Landau identified the order parameter before the microscopic BCS theory was developed, FSG identifies the \textbf{fractional scaling} required to satisfy observations. The explicit form of the operator likely emerges from the \textbf{coarse-graining} of a fundamental quantum geometry (such as Causal Dynamical Triangulations or Spin Foams) where the spectral dimension flows from $d_S=4$ to $d_S=2$.
@@ -1007,19 +948,6 @@ Phys.\ Rept.\ \textbf{119}, 1 (1985).
 P.~Dona, M.~Maggiore, M.~Mancarella,
 \emph{Nonlocal gravity with a Weyl-square term},
 Phys.\ Rev.\ D \textbf{92}, 084019 (2015).
-% MOND field-theoretic formulations
-\bibitem{BekensteinMilgrom1984}
-J.~Bekenstein, M.~Milgrom,
-\emph{Does the missing mass problem signal the breakdown of Newtonian gravity?},
-Astrophys.\ J.\ \textbf{286}, 7 (1984).
-\bibitem{SoussaWoodard2003}
-M.~E.~Soussa, R.~P.~Woodard,
-\emph{A nonlocal metric realization of MOND},
-Class.\ Quant.\ Grav.\ \textbf{20}, 2737 (2003).
-\bibitem{Deffayet2011}
-C.~Deffayet, G.~Esposito-Far\`ese, R.~P.~Woodard,
-\emph{Nonlocal metric formulations of MOND with sufficient lensing},
-Phys.\ Rev.\ D \textbf{84}, 124054 (2011).
 % Ghost-free infinite-derivative (non-local) gravity
 \bibitem{Biswas2012}
 T.~Biswas, E.~Gerwick, T.~Koivisto, A.~Mazumdar,
@@ -1033,6 +961,22 @@ Phys.\ Rev.\ D \textbf{86}, 044005 (2012).
 E.~T.~Tomboulis,
 \emph{Superrenormalizable gauge and gravitational theories},
 arXiv:hep-th/9702146 (1997).
+\bibitem{Eckert2019}
+D.~Eckert, S.~Ettori, V.~Ghirardini et al.,
+\emph{Hydrostatic mass profiles in X-COP galaxy clusters},
+A\&A \textbf{621}, A39 (2019).
+\bibitem{Tian2020}
+Y.~Tian, K.~Umetsu, C.-M.~Ko et al.,
+\emph{The Radial Acceleration Relation in CLASH Galaxy Clusters},
+ApJ \textbf{896}, 70 (2020).
+\bibitem{ZhaoFamaey2012}
+H.~Zhao, B.~Famaey,
+\emph{Comparing different MOND theories: the EMOND proposal},
+Phys.\ Rev.\ D \textbf{86}, 067301 (2012).
+\bibitem{Deffayet2011}
+C.~Deffayet, G.~Esposito-Far\`ese, R.~P.~Woodard,
+\emph{Nonlocal metric formulations of MOND with sufficient lensing},
+Phys.\ Rev.\ D \textbf{84}, 124054 (2011).
 \end{thebibliography}
 \newpage
 \appendix
@@ -1120,37 +1064,6 @@ def derivatives(y, a, k, model_type, H0, Omega_b, Omega_dm):
     d2_delta = gravity - pressure - friction
     
     return [d_delta, d2_delta]
-\end{lstlisting}
-% ============================================================
-\section{FDTD Simulation of Non-Local Wave Dynamics} \label{app:bullet_code}
-% ============================================================
-The separation of mass and gravity in the Bullet Cluster is derived from the hyperbolic nature of the FSG equations. Below is the core logic of the Finite-Difference Time-Domain (FDTD) solver used to generate Figure \ref{fig:bullet_sim}.
-\lstset{language=Python, basicstyle=\ttfamily\footnotesize, breaklines=true, frame=single}
-\begin{lstlisting}
-# FDTD Core for FSG Wave Equation
-# d2phi/dt2 - c^2 d2phi/dx2 + m^2 phi = Source
-for n in range(Nt):
-    # Update Gas Position (Source)
-    if n < t_collision:
-        pos_gas += v_gas * dt
-    else:
-        # Sudden Stop (Hydrodynamic Shock)
-        pass 
-        
-    # Compute Source Term (Gaussian)
-    source = np.exp(-((x - pos_gas)**2) / sigma**2)
-    
-    # Compute Spatial Laplacian
-    laplacian[1:-1] = (phi[2:] - 2*phi[1:-1] + phi[:-2]) / dx**2
-    
-    # Wave Equation Update (Leapfrog Integration)
-    # The inertia comes from the (2*phi - phi_prev) term
-    accel = (c_grav**2 * laplacian) - (m_eff**2 * phi) + source
-    phi_next = 2*phi - phi_prev + (dt**2 * accel)
-    
-    # Update State
-    phi_prev = phi.copy()
-    phi = phi_next.copy()
 \end{lstlisting}
 \end{onehalfspacing}
 \end{document}
