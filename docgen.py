@@ -16,7 +16,7 @@ def save_fig(name):
     print(f"✅ Généré : {name}")
     plt.close()
 
-print("--- GÉNÉRATION DE TOUTES LES FIGURES DU PAPIER (V3.1) ---")
+print("--- GÉNÉRATION DE TOUTES LES FIGURES DU PAPIER (V6.0) ---")
 
 # ==============================================================================
 # FIG 1 : Dimension Spectrale
@@ -265,7 +265,7 @@ dl_fsg = acoustic(l, np.minimum(0.25*(1+(800/l)**0.8), 1.05))
 plt.figure(figsize=(10, 6))
 plt.plot(l, dl_lcdm, 'k-', lw=5, alpha=0.15, label=r'$\Lambda$CDM')
 plt.plot(l, dl_nodm, 'g--', lw=2, label='No DM (GR)')
-plt.plot(l, dl_fsg, 'r-', lw=2.5, label='FSG Prediction')
+plt.plot(l, dl_fsg, 'r-', lw=2.5, label='FSG target (illustrative sketch, NOT a computed spectrum)')
 plt.xlabel(r'Multipole Moment $\ell$')
 plt.ylabel(r'Power Spectrum $\mathcal{D}_\ell$')
 plt.legend()
