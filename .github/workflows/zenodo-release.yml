@@ -1,0 +1,91 @@
+# ==============================================================================
+# Publication automatique sur Zenodo — MÊME lignée DOI (préserve l'historique)
+# ==============================================================================
+# À chaque release GitHub, ce workflow crée une NOUVELLE VERSION du dépôt
+# Zenodo existant (concept lié au DOI 10.5281/zenodo.17911187), exactement
+# comme le bouton "New version" de l'interface — l'historique des versions
+# et le concept-DOI sont préservés.
+#
+# PRÉREQUIS (une seule fois) :
+#   1. Sur zenodo.org : Account -> Applications -> Personal access tokens
+#      -> New token, avec les scopes "deposit:write" et "deposit:actions".
+#   2. Sur GitHub : Settings du dépôt -> Secrets and variables -> Actions
+#      -> New repository secret, nom : ZENODO_TOKEN, valeur : le token.
+#
+# Ensuite : publier une release GitHub (ex. tag v6.0) déclenche tout.
+# En cas d'échec après la création du brouillon, un draft reste visible sur
+# Zenodo : il peut être corrigé et publié à la main, ou supprimé.
+# ==============================================================================
+name: Publish release to Zenodo (same DOI lineage)
+
+on:
+  release:
+    types: [published]
+
+env:
+  # N'importe quel record-id d'une version existante de la lignée :
+  ZENODO_RECORD_ID: "17911187"
+  ZENODO_API: "https://zenodo.org/api"
+
+jobs:
+  zenodo-new-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create source archive
+        run: |
+          TAG="${{ github.event.release.tag_name }}"
+          git archive --format=zip --prefix="fsg-${TAG}/" -o "fsg-${TAG}.zip" HEAD
+          echo "ARCHIVE=fsg-${TAG}.zip" >> "$GITHUB_ENV"
+
+      - name: Create new Zenodo version and upload
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: |
+          set -euo pipefail
+          AUTH="Authorization: Bearer ${ZENODO_TOKEN}"
+          TAG="${{ github.event.release.tag_name }}"
+          VERSION="${TAG#v}"
+
+          echo "== 1. Résolution de la dernière version de la lignée =="
+          CONCEPT=$(curl -sf "${ZENODO_API}/records/${ZENODO_RECORD_ID}" | jq -r '.conceptrecid')
+          LATEST_ID=$(curl -sf "${ZENODO_API}/records/${CONCEPT}" | jq -r '.id')
+          echo "concept=${CONCEPT}  latest=${LATEST_ID}"
+
+          echo "== 2. Création du brouillon 'new version' =="
+          DRAFT=$(curl -sf -X POST -H "${AUTH}" \
+            "${ZENODO_API}/deposit/depositions/${LATEST_ID}/actions/newversion")
+          DRAFT_URL=$(echo "${DRAFT}" | jq -r '.links.latest_draft')
+          DRAFT_ID="${DRAFT_URL##*/}"
+          echo "draft=${DRAFT_ID}"
+
+          echo "== 3. Suppression des fichiers hérités de la version précédente =="
+          for FID in $(curl -sf -H "${AUTH}" "${ZENODO_API}/deposit/depositions/${DRAFT_ID}/files" | jq -r '.[].id'); do
+            curl -sf -X DELETE -H "${AUTH}" "${ZENODO_API}/deposit/depositions/${DRAFT_ID}/files/${FID}"
+          done
+
+          echo "== 4. Upload de l'archive de la release =="
+          BUCKET=$(curl -sf -H "${AUTH}" "${ZENODO_API}/deposit/depositions/${DRAFT_ID}" | jq -r '.links.bucket')
+          curl -sf -H "${AUTH}" --upload-file "${ARCHIVE}" "${BUCKET}/${ARCHIVE}" > /dev/null
+          # Le PDF compilé est joint séparément s'il existe dans le dépôt :
+          PDF=$(ls FRACTAL_SPATIO_TEMPORAL_GRAVITY.V*.pdf 2>/dev/null | sort -V | tail -1 || true)
+          if [ -n "${PDF}" ]; then
+            curl -sf -H "${AUTH}" --upload-file "${PDF}" "${BUCKET}/${PDF}" > /dev/null
+          fi
+
+          echo "== 5. Mise à jour des métadonnées (version, date, .zenodo.json) =="
+          META=$(curl -sf -H "${AUTH}" "${ZENODO_API}/deposit/depositions/${DRAFT_ID}" | jq '.metadata')
+          META=$(echo "${META}" | jq \
+            --arg v "${VERSION}" \
+            --arg d "$(date +%Y-%m-%d)" \
+            --slurpfile z .zenodo.json \
+            '. + $z[0] + {version: $v, publication_date: $d}')
+          curl -sf -X PUT -H "${AUTH}" -H "Content-Type: application/json" \
+            -d "{\"metadata\": ${META}}" \
+            "${ZENODO_API}/deposit/depositions/${DRAFT_ID}" > /dev/null
+
+          echo "== 6. Publication =="
+          DOI=$(curl -sf -X POST -H "${AUTH}" \
+            "${ZENODO_API}/deposit/depositions/${DRAFT_ID}/actions/publish" | jq -r '.doi')
+          echo "✅ Publié : https://doi.org/${DOI} (même concept-DOI, historique préservé)"

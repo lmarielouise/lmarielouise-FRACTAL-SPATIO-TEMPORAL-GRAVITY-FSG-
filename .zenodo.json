@@ -21,12 +21,5 @@
     "cosmology",
     "Tully-Fisher relation",
     "phantom dark energy"
-  ],
-  "related_identifiers": [
-    {
-      "identifier": "10.5281/zenodo.17911187",
-      "relation": "isNewVersionOf",
-      "scheme": "doi"
-    }
   ]
 }
