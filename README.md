@@ -2,9 +2,9 @@
 
 **Author:** Laurent Marie-Louise  
 **Date:** July 2026  
-**Version:** **6.0** (Post-Audit Rigor Revision)  
+**Version:** **7.0 (draft)** (MOND Derived: No-Go Theorem & Kinetic Memory Term)  
 **DOI:** [10.5281/zenodo.17911187](https://doi.org/10.5281/zenodo.17911187)
-**Status:** Preprint (v6 in preparation for Zenodo)
+**Status:** Preprint (v7 draft — v6 archived on Zenodo)
 
 ---
 
@@ -19,7 +19,17 @@ Version 6 is the result of a systematic internal audit of v5.1. Six weaknesses w
 * **w(z) and H(z) computed, not asserted (fixed).** The unfounded "2–6%" claim is replaced by a computed first-order bracket: w₀ ∈ [−1.7, −1.1] and |ΔH/H| ∈ [1%, 13%] for 0.5 < z < 2, anchored by the RR-model benchmark below and the V-tracking upper bound above (`simulations/sim_friedmann_fsg.py`). The structural, falsifiable core is unchanged: **w₀ < −1** (growing memory density ⟹ phantom).
 * **Bullet Cluster reframed (downgraded honestly).** The 1D FDTD simulation is now presented for exactly what it is: a qualitative proof of principle of transient field–source decoupling — with its limitations (1D, v = 0.6c vs ~0.01c observed, transient vs persistent offset, no lensing map) listed explicitly in the paper.
 
-### Extending to the small scale (new physical content)
+## 📢 What's New in Version 7.0: MOND Is Now Derived (and the Old Derivation Is Refuted)
+
+Version 7 executes the v6 "Priority 1" — derive the AQUAL μ-function from the action — with an unexpected outcome that restructures the theory:
+
+* **No-go theorem (new result).** The curvature-memory sector R·f(□⁻¹R) **cannot produce MOND**: in the quasi-static limit U = □⁻¹R = 2χ + const is *local in the potential*, so the reduction yields a potential-dependent (not acceleration-dependent) modification, and the rotation curve stays **Keplerian** (verified symbolically + numerically). The v6 "scaling selection" claim of an AQUAL reduction is formally **retracted**. This matches the literature: curvature-memory models (RR, RT, Deser–Woodard) give dark energy, not MOND.
+* **The corrected action (new physics).** A **kinetic memory term** is added, built from the *gradient* of the same field U: S_K ∝ a₀²F(c⁴(∂U)²/4a₀²). Since ∇U = 2∇χ quasi-statically, this covariant non-local functional "sees" the acceleration — exactly what the no-go forbids to the curvature sector. Precedent: non-local MOND of Soussa–Woodard (2003) and Deffayet–Esposito-Farèse–Woodard (2011); FSG's own twist: U is not ad hoc, it's the cosmological memory field. **One field, two roles: its value carries dark energy, its gradient carries MOND.**
+* **AQUAL derived (the derivation the paper always claimed).** Through the localization constraint, the additive term becomes a *multiplicative* modification of Poisson: ∇·[μ_eff(|∇χ|/a₀)∇χ] = 4πGρ with μ_eff = 1 + (4β/α)F′ — a function of the **acceleration**, derived, not postulated (verified with sympy; `simulations/sim_mond_from_action.py`). Choosing μ_eff(y) = 1−e^(−y): exact deep-MOND (BTFR v⁴ = GMa₀ to 0.04% numerically), Newtonian restoration with corrections e^(−g/a₀) ~ e^(−10⁸) at 1 AU — still **no screening needed**.
+* **Honest limits stated.** One-potential sector only (Φ=Ψ); the two-potential/lensing reduction, the ghost analysis of the kinetic sector, and the cosmological branch (Θ_Z restriction to spacelike gradients) are the new open problems — listed as the new Priority 1.
+* **Strong-field statement amended.** With the kinetic term, Schwarzschild is exact only for the curvature sector; the full v7 correction near a horizon is O(e^(−g/a₀)) ~ e^(−10¹¹) — practically indistinguishable from GR. The ringdown spectrum (coupled δU perturbations) is flagged as not yet computed.
+
+### Extending to the small scale (v6 content)
 * **Strong field / black holes (new section, new result).** Because a vacuum black hole has R = 0, the non-local term switches off and **Schwarzschild and Kerr are exact solutions of FSG** — black-hole shadows, ringdown and ISCO are identical to GR. Any deviation is confined beyond the MOND radius r_M = √(GM/a₀), which exceeds the horizon by 8–11 orders of magnitude (`simulations/sim_black_hole.py`, with a table for the Sun, stellar BH, Sgr A*, M87*). The old `sim_black_hole.py`, which applied the MOND force at the horizon and claimed to "soften" the singularity, is retracted — FSG is an IR modification and does **not** resolve the singularity.
 * **UV completion honestly bounded.** The "proof of stability" is downgraded to its true status: the entire (infinite-derivative) form factor e^(−□/M*²) is **tree-level ghost-free** (Biswas–Gerwick–Koivisto–Mazumdar; Modesto; Tomboulis), while loop-level unitarity and the non-perturbative treatment of the IR branch cut remain open. The erroneous invocation of the Vafa–Witten theorem is withdrawn.
 
@@ -27,7 +37,7 @@ Version 6 is the result of a systematic internal audit of v5.1. Six weaknesses w
 
 We propose a modified theory of gravity based on a Fractal and Non-Local Spacetime Geometry (FSG), obtained from an effective action containing the **fractional** non-local operator $X = \Box^{-1}R$, motivated by an infrared flow of the spectral dimension towards $d_S \approx 2$.
 
-In the static weak-field limit, the fractional structure $f(X) \sim X^{-1/2}$ reduces to a nonlinear modified Poisson equation of Milgrom (AQUAL) type, whose exact deep-IR solution is a logarithmic potential. This leads to:
+A no-go theorem established in v7 shows that the curvature-memory sector alone cannot produce MOND (quasi-statically $\Box^{-1}R$ is local in the potential ⟹ Keplerian curves). The action is therefore completed by a **kinetic memory term** $\propto a_0^2 F(c^4(\partial U)^2/4a_0^2)$ built from the gradient of the same non-local field; through the localization constraint it becomes a multiplicative modification of Poisson, and the Bekenstein–Milgrom (AQUAL) equation is **derived**, with $\mu_{\rm eff}(y)=1-e^{-y}$. This leads to:
 1.  Flat galactic rotation curves without dark matter.
 2.  An exact **Baryonic Tully-Fisher relation** ($V^4 = GM a_0$), derived analytically.
 3.  An acceleration scale derived from the cosmic memory fields: $a_0 = cH_0\,|V_0|^{3/2}/|U_0| \approx 1.14\times10^{-10}\ \mathrm{m/s^2}$, within 5% of observation with no free parameter.
@@ -78,7 +88,12 @@ This repository contains the numerical laboratory validating the theory, located
 * **Physics:** Modified Jeans equation for the baryon fluid with an IR-enhanced G_eff(k). **Not a CMB computation** (no Boltzmann hierarchy, no Thomson coupling, no metric potentials).
 * **Result:** Shows that an IR-enhanced coupling can re-amplify pressure-damped **Jeans oscillations** — an illustration of the "Fractal Boost" mechanism, nothing more.
 
-### 6. Additional Simulations
+### 6. MOND from the Action — Priority 1 (New in v7)
+* **File:** `simulations/sim_mond_from_action.py`
+* **Physics:** (A) numerical proof of the no-go (curvature sector ⟹ Kepler); (B) solution of the derived AQUAL equation with μ_eff(y) = 1−e^(−y).
+* **Result:** flat rotation curves and exact BTFR **derived from the action**; solar-system corrections e^(−g/a₀) (`fig_mond_from_action.pdf`).
+
+### 7. Additional Simulations
 * **`simulations/sim_galaxy_rotation.py`** — Generates the Newton vs FSG rotation animation (`galaxy_rotation.gif`).
 * **`simulations/sim_solar_system.py`** — Solar System orbits (note: the v5 screening mechanism is retracted in v6; PPN compatibility now follows from the perturbative non-local calculation in the paper).
 * **`simulations/sim_black_hole.py`** — Strong-field scale separation: computes r_s and r_M = √(GM/a₀) for the Sun, stellar/intermediate BHs, Sgr A* and M87*, and plots g(r) showing FSG ≡ GR from the horizon to the MOND radius (`fig_black_hole_scales.pdf`).
@@ -87,7 +102,8 @@ This repository contains the numerical laboratory validating the theory, located
 ---
 
 ## Key Results (v6 epistemic status)
-* **Rotation Curves & BTFR:** flat curves and V⁴ = GMa₀ from the exact deep-MOND solution of the AQUAL limit — *derived*.
+* **Rotation Curves & BTFR:** flat curves and V⁴ = GMa₀ from the AQUAL equation now *derived from the v7 action* (kinetic memory term; one-potential sector) — *derived, with stated caveats*.
+* **No-go theorem:** curvature-memory alone ⟹ Keplerian curves — *proved (symbolic + numeric)*.
 * **a₀ from cosmic memory:** 1.14×10⁻¹⁰ m/s², −4.8% vs observation at zeroth order — *computed, no free parameter*.
 * **Solar System:** |γ_PPN − 1| ~ 10⁻¹⁶–10⁻²⁰ without screening — *computed perturbatively*.
 * **Black holes:** Schwarzschild/Kerr exact solutions; GR recovered from horizon to r_M (8–11 decades) — *derived*.
