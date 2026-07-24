@@ -1,0 +1,32 @@
+{
+  "title": "FRACTAL SPATIO-TEMPORAL GRAVITY (FSG): Post-Audit Rigor Revision",
+  "description": "<p>A modified theory of gravity based on a Fractal and Non-Local Spacetime Geometry (FSG), built from the non-local operator X = Box^-1 R. In the static weak-field limit the fractional structure f(X) ~ X^-1/2 reduces to a nonlinear modified Poisson equation of Milgrom (AQUAL) type, yielding flat rotation curves, the exact baryonic Tully-Fisher relation, and an acceleration scale a0 = cH0 |V0|^3/2 / |U0| derived from the cosmic memory fields with no free parameter. Solar System constraints are satisfied without any screening mechanism. The repository contains the LaTeX source of the paper and the numerical laboratory (Python simulations) supporting each claim, with the epistemic status of every result stated explicitly.</p>",
+  "creators": [
+    {
+      "name": "Marie-Louise, Laurent"
+    }
+  ],
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "keywords": [
+    "modified gravity",
+    "non-local gravity",
+    "MOND",
+    "dark matter",
+    "dark energy",
+    "spectral dimension",
+    "fractal spacetime",
+    "cosmology",
+    "Tully-Fisher relation",
+    "phantom dark energy"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.17911187",
+      "relation": "isNewVersionOf",
+      "scheme": "doi"
+    }
+  ]
+}

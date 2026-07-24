@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this code or theory in your research, please cite it as below."
+title: "FRACTAL SPATIO-TEMPORAL GRAVITY (FSG): Post-Audit Rigor Revision"
+authors:
+  - family-names: "Marie-Louise"
+    given-names: "Laurent"
+version: "6.0"
+date-released: "2026-07-24"
+doi: "10.5281/zenodo.17911187"
+repository-code: "https://github.com/lmarielouise/FRACTAL-SPATIO-TEMPORAL-GRAVITY-FSG-"
+license: CC-BY-4.0
+keywords:
+  - modified gravity
+  - non-local gravity
+  - MOND
+  - dark matter
+  - dark energy
+  - fractal spacetime
+  - cosmology
