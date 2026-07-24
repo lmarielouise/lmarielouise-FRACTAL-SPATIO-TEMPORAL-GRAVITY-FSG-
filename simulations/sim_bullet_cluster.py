@@ -4,6 +4,16 @@ import matplotlib.pyplot as plt
 # ==========================================
 # GÉNÉRATEUR FIGURE : BULLET CLUSTER (PDF)
 # ==========================================
+# MODELE JOUET 1D (correction v6) — preuve de principe qualitative UNIQUEMENT :
+#  * v_gas = 0.6 c_grav est choisi pour rendre l'effet visible sur la grille ;
+#    la vitesse observee de 1E 0657-56 est ~0.01c. L'amplitude physique de
+#    l'overshoot a vitesse realiste n'est PAS etablie ici.
+#  * L'offset champ/source est transitoire (il decroit apres le freinage),
+#    alors que l'offset de lentillage observe est persistant.
+#  * Aucune carte de lentillage n'est calculee.
+# Ce que le script demontre : un champ gravitationnel de type onde non-locale
+# PEUT se decoupler transitoirement de sa source baryonique freinee.
+# La confrontation quantitative exige une simulation hydro 3D + lentillage.
 
 # Paramètres FDTD
 L = 100.0

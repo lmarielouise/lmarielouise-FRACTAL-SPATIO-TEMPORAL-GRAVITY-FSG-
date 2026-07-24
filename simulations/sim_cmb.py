@@ -1,3 +1,13 @@
+# =============================================================================
+# MODELE JOUET : equation de Jeans modifiee pour le fluide baryonique.
+# ATTENTION (correction v6) : ce script n'est PAS un calcul du spectre CMB.
+# Il ne contient ni hierarchie de Boltzmann photonique, ni couplage Thomson,
+# ni potentiels metriques Phi/Psi, ni neutrinos. Les oscillations produites
+# sont des oscillations de Jeans. Il illustre seulement qu'un couplage
+# G_eff(k) renforce dans l'IR peut re-amplifier des oscillations amorties.
+# Pour la partie CMB honnetement calculable (positions des pics), voir
+# sim_cmb_peaks.py. Les amplitudes exigent un code Boltzmann non-local.
+# =============================================================================
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import odeint
@@ -123,19 +133,19 @@ def run_simulation():
     factor = l_modes * (l_modes + 1)
     
     plt.plot(l_modes, np.array(pk_lcdm) * factor, 'k-', label=r'$\Lambda$CDM (Ref: With Dark Matter)', lw=2)
-    plt.plot(l_modes, np.array(pk_nodm) * factor, 'g--', label='GR No Dark Matter (Collapsed Peaks)')
+    plt.plot(l_modes, np.array(pk_nodm) * factor, 'g--', label='GR No Dark Matter (damped oscillations)')
     plt.plot(l_modes, np.array(pk_fsg) * factor, 'r-', label='FSG (Fractal Boost, No DM)', lw=2.5)
     
     plt.xlabel(r'Multipole Moment $\ell$')
     plt.ylabel(r'Power Proxy $\ell(\ell+1)P(k)$')
-    plt.title('Preliminary Boltzmann Check: Acoustic Peaks Amplitude')
+    plt.title('Toy Model: Modified Jeans Oscillations (NOT CMB acoustic peaks)')
     plt.legend()
     plt.grid(True, alpha=0.3)
     plt.xlim(0, 1500)
     plt.yscale('log') # Log pour bien voir les différences d'ordre de grandeur
     
-    text = "RESULTAT PRELIMINAIRE :\nLe script integre l'equation\ndes perturbations lineaires.\n"
-    text += "Si la courbe Rouge remonte\nvers la Noire, le concept FSG survit."
+    text = "MODELE JOUET (equation de Jeans modifiee) :\npas de hierarchie de Boltzmann, pas de couplage\nThomson photon-baryon, pas de potentiels metriques.\n"
+    text += "Ces oscillations sont des oscillations de JEANS,\npas les pics acoustiques du CMB.\nLe vrai test requiert un code Boltzmann non-local\n(voir simulations/sim_cmb_peaks.py pour la partie\ngeometrique calculable honnetement)."
     plt.text(10, min(np.array(pk_lcdm)*factor), text, fontsize=9, bbox=dict(facecolor='white', alpha=0.8))
 
     plt.tight_layout()
