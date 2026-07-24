@@ -3,7 +3,7 @@
 **Author:** Laurent Marie-Louise  
 **Date:** December 2025  
 **Version:** **5.1** (Rigorous MOND Derivation & Dynamical Stability)  
-**DOI:** [[10.5281/zenodo.17911187](https://doi.org/10.5281/zenodo.17911187)]
+**DOI:** [10.5281/zenodo.17911187](https://doi.org/10.5281/zenodo.17911187)
 **Status:** Preprint (Dynamics of Colliding Clusters & UV-IR Unification)
 
 ---
@@ -66,9 +66,15 @@ This repository contains the numerical laboratory validating the theory, located
 * **Result:** Demonstrates the **"Gravitational Overshoot"**: upon braking of the baryonic gas, the potential continues its trajectory due to field inertia, reproducing the mass separation observed in 1E 0657-56.
 
 ### 3. CMB "Acid Test" (Boltzmann Check)
-* **File:** `simulations/sim_boltzmann_final.py`
+* **File:** `simulations/sim_cmb.py`
 * **Physics:** Numerical integration of the linear perturbation equations (Modified Jeans Equation) for the baryon-photon fluid.
 * **Result:** Demonstrates that the infrared modification of gravity successfully re-amplifies acoustic oscillations, mimicking Dark Matter potential wells.
+
+### 4. Additional Simulations
+* **`simulations/sim_galaxy_rotation.py`** — Generates the Newton vs FSG rotation animation (`galaxy_rotation.gif`).
+* **`simulations/sim_solar_system.py`** — Validates the screening mechanism (γ_PPN → 1) on Solar System scales.
+* **`simulations/sim_black_hole.py`** — Behavior of the fractal propagator in the strong-field regime.
+* **`simulations/sim_cosmic_web.py`** — Large-scale structure formation under the fractal propagator.
 
 ---
 
@@ -84,12 +90,12 @@ This repository contains the numerical laboratory validating the theory, located
 You need Python installed with scientific libraries:
 
 ```bash
-pip install numpy matplotlib scipy
+pip install -r requirements.txt
 ```
 
 ## 💻 Usage
 
-### 1. Run the Unified Physics Engine (V3.1)
+### 1. Run the Unified Physics Engine
 This is the main simulation that reproduces the key results of the paper (Rotation Curves + JWST):
 
 ```bash
@@ -115,7 +121,7 @@ pdflatex main.tex
 
 ## 📄 Citation
 
-If you use this code or theory in your research, please cite **Version 3.1**:
+If you use this code or theory in your research, please cite **Version 5.1**:
 
 ```bibtex
 @misc{marielouise2025fsg,
@@ -125,8 +131,7 @@ If you use this code or theory in your research, please cite **Version 3.1**:
   publisher    = {Zenodo},
   version      = {5.1},
   doi          = {10.5281/zenodo.17911187},
-  url          = {[10.5281/zenodo.17911187](https://doi.org/10.5281/zenodo.17911187)}
-}
+  url          = {https://doi.org/10.5281/zenodo.17911187}
 }
 ```
 

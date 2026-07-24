@@ -16,7 +16,7 @@ def save_fig(name):
     print(f"✅ Généré : {name}")
     plt.close()
 
-print("--- GÉNÉRATION DE TOUTES LES FIGURES DU PAPIER (V3.1) ---")
+print("--- GÉNÉRATION DE TOUTES LES FIGURES DU PAPIER (V5.1) ---")
 
 # ==============================================================================
 # FIG 1 : Dimension Spectrale
