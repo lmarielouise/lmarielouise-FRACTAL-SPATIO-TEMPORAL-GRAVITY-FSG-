@@ -2,9 +2,20 @@
 
 **Author:** Laurent Marie-Louise  
 **Date:** July 2026  
-**Version:** **6.0 (corrected)**  
+**Version:** **6.1**  
 **DOI:** [10.5281/zenodo.17911187](https://doi.org/10.5281/zenodo.17911187)  
 **Status:** Preprint
+
+---
+
+## 📢 What's New in Version 6.1
+
+Version 6.1 records concrete progress on the **central open problem** — the covariant action — without changing any validated result of v6.0. A new section (*Progress Toward a Covariant Completion: the Aether–Scalar–Tensor Correspondence*) documents, soberly and with explicit boundaries:
+
+* **The two no-go results are now understood.** They failed because they coupled the memory as an added *scalar source*; the pillar is instead a modification of the *single* potential (flux through d_eff dimensions), which places FSG in the Bekenstein–Milgrom / QUMOND class. Cast this way it passes both killer tests — flat curves (no Keplerian fall-off) and Φ=Ψ (correct lensing). (`simulations/sim_covariant_aest.py`)
+* **The covariant home is the AeST class.** FSG's d_eff *fixes* the free function of the relativistic Aether–Scalar–Tensor theory (Skordis & Złośnik 2021): the reconstructed F(X) has the required deep-MOND (⅔X^{3/2}) and Newtonian (X) limits. (`simulations/sim_aest_freefunction.py`)
+* **The dark sector from FSG's own memory.** The memory field U = □⁻¹R has energy density scaling ∝ a⁻³ (dark-matter-like) through the CMB epoch and → const (dark-energy-like) today, driven by the *same* U₀ = −16.1 that fixes a₀. (`simulations/sim_memory_cosmo_scaling.py`)
+* **Honest boundaries (unchanged status of the open problems).** These are necessary structural correspondences, not sufficiency proofs: FSG's U is *slaved* (□⁻¹R, more constrained than AeST's free scalar); the amplitudes (Ω-equivalent, peak heights) still need the perturbed non-local Boltzmann calculation; and at quasi-static level the void ISW sign of the Cold Spot comes out wrong. The covariant action, the Bullet offset, and the CMB amplitudes remain **open** — but now reduce to one identified computation.
 
 ---
 
@@ -126,15 +137,15 @@ pdflatex main.tex
 
 ## 📄 Citation
 
-If you use this code or theory in your research, please cite **Version 6.0 (corrected)**:
+If you use this code or theory in your research, please cite **Version 6.1**:
 
 ```bibtex
 @misc{marielouise2025fsg,
   author       = {Marie-Louise, Laurent},
-  title        = {FRACTAL SPATIO-TEMPORAL GRAVITY (FSG): Post-Audit Rigor Revision},
+  title        = {FRACTAL SPATIO-TEMPORAL GRAVITY (FSG): The Pillar, Cluster Memory Modulation, and the Path to a Covariant Completion},
   year         = 2026,
   publisher    = {Zenodo},
-  version      = {6.0},
+  version      = {6.1},
   doi          = {10.5281/zenodo.17911187},
   url          = {https://doi.org/10.5281/zenodo.17911187}
 }

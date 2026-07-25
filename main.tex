@@ -28,7 +28,7 @@
 % ============================
 \title{FRACTAL SPATIO-TEMPORAL GRAVITY (FSG)}
 \author{Laurent MARIE-LOUISE}
-\date{Version 6.0 (corrected) --- July 2026}
+\date{Version 6.1 --- July 2026}
 % ============================
 \begin{document}
 \maketitle
@@ -45,7 +45,7 @@ The acceleration scale is fixed by the cosmic memory fields $U=\Box^{-1}R$, $V=\
 
 A new result of this corrected version concerns \emph{galaxy clusters}: the residual mass discrepancy of MOND in cluster cores (a factor $2$--$3$) is resolved by a \emph{memory modulation} of the acceleration scale, $a_0^{\rm eff}=a_0\,[1+(\delta U/U_*)^n]$ with $\delta U=2|\Phi|/c^2$. A single parameter $U_*\simeq 4.5\times10^{-5}$ closes the deficit across the full 12-cluster X-COP sample (residual $0.10$~dex, at the intrinsic scatter floor), leaves galaxies untouched ($<0.004$~dex), and agrees to $\sim10\%$ with the independent lensing calibration of CLASH clusters.
 
-We are explicit about what remains open: (i) the covariant action for the pillar; (ii) the spatial lensing offset of the Bullet Cluster, which we show is \emph{not} produced by the memory mechanism --- the same wall faced by all modified-gravity approaches --- and remains unsolved; and (iii) the CMB acoustic-peak amplitudes, which require a dedicated non-local Boltzmann code. The CMB peak \emph{geometry} is shown compatible with FSG.
+We are explicit about what remains open: (i) the covariant action for the pillar; (ii) the spatial lensing offset of the Bullet Cluster, which we show is \emph{not} produced by the memory mechanism --- the same wall faced by all modified-gravity approaches --- and remains unsolved; and (iii) the CMB acoustic-peak amplitudes, which require a dedicated non-local Boltzmann code. The CMB peak \emph{geometry} is shown compatible with FSG. This version (6.1) additionally records concrete progress on the central open problem (Section~\ref{sec:aest}): the single-potential structure of the pillar identifies its covariant home as the Aether--Scalar--Tensor (AeST) class, whose free function is fixed by $d_{\rm eff}(g)$ and whose dark sector is carried by the same memory field that fixes $a_0$. These are structural correspondences, not a completed derivation, and the honest boundaries are stated.
 \end{abstract}
 \newpage
 \tableofcontents
@@ -754,6 +754,33 @@ Summary of key predictions of FSG versus $\Lambda$CDM.}
 \end{table}
 \newpage
 % ============================================================
+\section{Progress Toward a Covariant Completion: the Aether--Scalar--Tensor Correspondence}
+\label{sec:aest}
+% ============================================================
+The central open problem of FSG is the covariant action realizing the pillar (Sections~\ref{sec:risks}, \ref{sec:future}). This section records concrete progress toward it made since the first v6 release. The results below are \emph{structural correspondences}, not a completed derivation; the honest boundaries are collected at the end (Section~\ref{sec:aest_open}).
+
+\subsection{Why the Two No-Go Results Occurred}
+Both retracted attempts coupled the memory as a \emph{source}: a curvature-memory term $R\,f(\Box^{-1}R)$, or a kinetic-memory term $(\partial\,\Box^{-1}R)^2$ added to the action. The first makes the modification potential-dependent, forcing Keplerian rather than flat curves; the second introduces a second independent metric potential and hence gravitational slip $\Phi\neq\Psi$, spoiling lensing. The common flaw is now identifiable: the pillar is not the \emph{addition of a field}, but a modification of how the \emph{single} gravitational potential responds to its source --- the flux propagating through $d_{\rm eff}$ dimensions. Cast this way, the modification belongs to the Bekenstein--Milgrom / QUMOND class (a single potential with a modified kinetic term), whose relativistic completion is the aether / preferred-foliation class --- the same anisotropic structure suggested independently by the $d_{\rm eff}\to2$ behaviour common to the deep infrared and the ultraviolet.
+
+\subsection{The Single-Potential Form Passes Both Tests}
+Written as a QUMOND-type law $g=\nu(g_N/a_0)\,g_N$ with $\nu(y)=[1-e^{-\sqrt{y}}]^{-1}$ derived from $d_{\rm eff}=3-e^{-\sqrt{g_N/a_0}}$, FSG is a single-potential theory. Numerically (\texttt{simulations/sim\_covariant\_aest.py}) it (i) yields flat rotation curves and the exact BTFR --- evading no-go~1 --- and (ii) has $\Phi=\Psi$ identically, so the lensing mass equals the dynamical mass --- evading no-go~2. The two walls that stopped the scalar-addition attempts are both consequences of introducing a \emph{second} potential; the single-potential flux formulation removes them by construction.
+
+\subsection{The Free Function Fixed by $d_{\rm eff}$}
+In AQUAL form, $\mathcal{L}=-(a_0^2/8\pi G)\,F(X)$ with $X=|\nabla\Phi|^2/a_0^2$ and interpolation $\mu(x)=F'(x^2)$. Reconstructing $F$ from FSG's $d_{\rm eff}$-derived $\mu$ (\texttt{simulations/sim\_aest\_freefunction.py}) gives a function interpolating between the deep-MOND form $F\to\tfrac{2}{3}X^{3/2}$ (verified to $0.2\%$) and the Newtonian form $F\to X$ ($F'\to1$). These are precisely the two limits required of the free function in the relativistic Aether--Scalar--Tensor (AeST) theory of Skordis and Z\l osnik \cite{SkordisZlosnik2021}, which is established to reproduce MOND rotation curves, $\Phi=\Psi$ lensing, \emph{and} the CMB acoustic-peak spectrum. FSG's flux dimension therefore \emph{fixes} an AeST-class free function, the exponential interpolation in between being the geometric fingerprint of $d_{\rm eff}$.
+
+\subsection{The Cosmological Sector from the Memory Field}
+AeST reproduces the CMB because its scalar carries an energy density scaling dust-like ($\propto a^{-3}$) during matter domination. FSG already possesses a cosmological scalar sector: the memory field $U=\Box^{-1}R$. Integrating $U$ on the FLRW background (\texttt{simulations/sim\_memory\_cosmo\_scaling.py}) gives $U(a{=}1)=-16.1$ --- the \emph{same} value that fixes $a_0$ in Section~\ref{sec:memory} --- with the steady state $U'\to-2$ in matter domination, so that the natural kinetic memory density $\rho_U\sim(\dot U)^2\propto a^{-3}$ (dust-like) through the CMB epoch and $\to\,$const at late times (dark-energy-like). A single memory field thus carries the scaling of \emph{both} dark sectors at the epochs where each is required, driven by the same $U_0$ that already sets the acceleration scale.
+
+\subsection{Honest Boundaries}
+\label{sec:aest_open}
+These are necessary correspondences, not sufficiency proofs, and three boundaries must be stated plainly.
+\begin{enumerate}
+\item FSG's $U=\Box^{-1}R$ is \emph{slaved} to the curvature --- a more constrained object than AeST's freely-specifiable scalar. It is not established that this restriction inherits the full AeST CMB success.
+\item Matching the free-function limits and the density \emph{scaling} does not fix the \emph{amplitudes} (the $\Omega$-equivalent and the peak heights), which require the perturbed non-local calculation of Priority~4 (Section~\ref{sec:future}).
+\item At the quasi-static level the memory potential of an isolated void \emph{grows} ($\propto\sqrt{D}$) rather than decaying, giving the \emph{wrong} sign for the CMB Cold Spot integrated Sachs--Wolfe imprint; whether the full retarded memory dynamics restores the observed cold sign is open and tied to the same perturbed calculation.
+\end{enumerate}
+The value of the correspondence is that it converts the covariant-action problem from ``no known route'' into ``a mapping onto a known, viable class'', and it explains why the earlier scalar-addition attempts failed. It does not, by itself, promote FSG from an effective law to a validated fundamental theory.
+% ============================================================
 \section{Theoretical Risks: How FSG Could Be Refuted}
 \label{sec:risks}
 % ============================================================
@@ -771,7 +798,7 @@ density, there is no longer motivation to remove dark matter.
 \subsection{The Bullet Cluster Lensing Offset (Open)}
 The cluster \emph{mass budget} is resolved by memory modulation (Section~\ref{sec:clusters}), but the \emph{spatial lensing offset} of the Bullet Cluster is not: our 2D time-dependent test shows the effective-mass peak stays on the gas for all memory timescales, because any potential-sourced modification tracks the dominant baryon. This is an unsolved problem, shared with all modified-gravity approaches. Should it be shown that \emph{no} FSG mechanism can place the lensing peak on the galaxies without invoking additional (e.g.\ cold-baryonic or sterile-neutrino) mass, this remains a permanent difficulty for the framework on colliding systems.
 \subsection{Absence of a Covariant Action for the Pillar (Central Open Problem)}
-The galactic sector rests on the pillar (Section~\ref{sec:pillar}) as an \emph{effective} flux-reduction law. Two attempts to derive it from a covariant action have failed by explicit no-go results and are retracted. If it can be proven that \emph{no} covariant, ghost-free action reduces to the acceleration-dependent dimensional flow $d_{\rm eff}(g)$ --- as opposed to a potential-dependent or fixed-length modification --- then FSG cannot be promoted from an effective law to a fundamental theory, and stands only at the phenomenological level of MOND.
+The galactic sector rests on the pillar (Section~\ref{sec:pillar}) as an \emph{effective} flux-reduction law. Two attempts to derive it from a covariant action have failed by explicit no-go results and are retracted. Section~\ref{sec:aest} records progress: the failures are traced to coupling the memory as a \emph{source} rather than as a modification of the single potential, and the single-potential (QUMOND) formulation maps onto the AeST class \cite{SkordisZlosnik2021} with a free function fixed by $d_{\rm eff}(g)$. This is a candidate route, not a completed action. If it can nonetheless be proven that \emph{no} covariant, ghost-free action reduces to the acceleration-dependent dimensional flow $d_{\rm eff}(g)$ --- as opposed to a potential-dependent or fixed-length modification --- then FSG cannot be promoted from an effective law to a fundamental theory, and stands only at the phenomenological level of MOND.
 \subsection{The CMB "Acid Test" (Boltzmann Code)}
 The most critical challenge for FSG is to reproduce the Cosmic Microwave Background (CMB) angular power spectrum, particularly the third acoustic peak, without Cold Dark Matter.
 We propose a "Fractal Boost" mechanism where the effective gravitational coupling $G_{\rm eff}(k)$ increases in the infrared, potentially deepening potential wells during recombination.
@@ -811,7 +838,7 @@ The suppression in (a) controls the UV but does not remove the non-analytic $X^{
 \label{sec:future}
 % ============================================================
 \subsection{A Covariant Action for the Pillar (Priority 1)}
-The central task is to find a covariant, ghost-free action whose quasi-static limit reproduces the flux law $d_{\rm eff}(g)$ of Section~\ref{sec:pillar} --- an \emph{acceleration}-dependent dimensional flow. The two natural candidates within the non-local family (curvature memory $R\,f(\Box^{-1}R)$ and kinetic memory $(\partial\Box^{-1}R)^2$) are excluded by the no-go results of this paper. Promising directions are the non-local metric MOND constructions of Deffayet--Esposito-Far\`ese--Woodard, in which $\Box^{-1}$ acts on a kinetic scalar, adapted so that the interpolation tracks acceleration and the lensing ($\Phi=\Psi$) property is preserved.
+The central task is to find a covariant, ghost-free action whose quasi-static limit reproduces the flux law $d_{\rm eff}(g)$ of Section~\ref{sec:pillar} --- an \emph{acceleration}-dependent dimensional flow. The two natural candidates within the non-local family (curvature memory $R\,f(\Box^{-1}R)$ and kinetic memory $(\partial\Box^{-1}R)^2$) are excluded by the no-go results of this paper. The correspondence of Section~\ref{sec:aest} identifies the most concrete route: the single-potential formulation places FSG in the Aether--Scalar--Tensor (AeST) class \cite{SkordisZlosnik2021}, whose free function is reproduced by $d_{\rm eff}(g)$ (with the correct $\tfrac23 X^{3/2}$ and $X$ limits) and whose dark sector has the same $a^{-3}$/const scaling carried by the FSG memory field $U=\Box^{-1}R$. The remaining task is to determine whether the \emph{slaved} choice $U=\Box^{-1}R$ --- more constrained than AeST's free scalar --- reproduces the AeST CMB spectrum, i.e.\ to complete the mapping at the level of amplitudes rather than scalings. This is the same computation required by Priority~4.
 \subsection{Covariant Back-Reaction (Priority 2)}
 The memory-field values $(U_0, V_0)$ entering $a_0$, and the bracket on $w(z)$ and $H(z)$, are computed at zeroth/first order on a $\Lambda$CDM background. The full covariant integration of the FSG Friedmann equations is required to close the $5\%$ residual on $a_0$, collapse the $[-1.7,-1.1]$ bracket on $w_0$, and derive from first principles the combination $|V|^{3/2}/|U|$ and the modulation parameters $(U_*,n)$ of the cluster sector.
 \subsection{The Bullet Cluster and Colliding Systems (Priority 3)}
@@ -877,6 +904,10 @@ Astrophys.\ J.\ \textbf{632}, 859 (2005).
 S.~Deser, R.~P.~Woodard,
 \emph{Nonlocal Cosmology},
 Phys.\ Rev.\ Lett.\ \textbf{99}, 111301 (2007).
+\bibitem{SkordisZlosnik2021}
+C.~Skordis, T.~Z\l osnik,
+\emph{New Relativistic Theory for Modified Newtonian Dynamics},
+Phys.\ Rev.\ Lett.\ \textbf{127}, 161302 (2021).
 \bibitem{Maggiore2014}
 M.~Maggiore, M.~Mancarella,
 \emph{Nonlocal gravity and dark energy},
