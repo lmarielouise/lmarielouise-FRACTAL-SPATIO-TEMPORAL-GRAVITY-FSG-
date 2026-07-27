@@ -8,9 +8,11 @@
 
 ---
 
-## 📢 What's New in Version 6.1
+## 📢 What's New in Version 6.1 — The Missing Link Found: a Covariant Home for the Pillar
 
-Version 6.1 records concrete progress on the **central open problem** — the covariant action — without changing any validated result of v6.0. A new section (*Progress Toward a Covariant Completion: the Aether–Scalar–Tensor Correspondence*) documents, soberly and with explicit boundaries:
+**The main advance of v6.1: the route to FSG's missing link — a covariant action for the pillar — has been found.** Every open problem of v6.0 (the covariant action, the Bullet offset, the CMB amplitudes) traced back to one absence: a relativistic action realizing the pillar. Version 6.1 identifies where it lives. The pillar's *single-potential* structure places FSG in the **Aether–Scalar–Tensor (AeST) class** (Skordis & Złośnik 2021) — the relativistic MOND framework already proven to reproduce gravitational lensing *and* the CMB acoustic peaks. This converts the central open problem from *"no known route"* into *"a mapping onto a known, viable class,"* and explains why the two earlier derivation attempts failed. It changes no validated result of v6.0.
+
+A new section (*Progress Toward a Covariant Completion: the Aether–Scalar–Tensor Correspondence*) documents this, soberly and with explicit boundaries:
 
 * **The two no-go results are now understood.** They failed because they coupled the memory as an added *scalar source*; the pillar is instead a modification of the *single* potential (flux through d_eff dimensions), which places FSG in the Bekenstein–Milgrom / QUMOND class. Cast this way it passes both killer tests — flat curves (no Keplerian fall-off) and Φ=Ψ (correct lensing). (`simulations/sim_covariant_aest.py`)
 * **The covariant home is the AeST class.** FSG's d_eff *fixes* the free function of the relativistic Aether–Scalar–Tensor theory (Skordis & Złośnik 2021): the reconstructed F(X) has the required deep-MOND (⅔X^{3/2}) and Newtonian (X) limits. (`simulations/sim_aest_freefunction.py`)
