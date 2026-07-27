@@ -626,6 +626,10 @@ int background_functions(
     /** - velocity growth factor */
     pvecback[pba->index_bg_f] = pvecback_B[pba->index_bi_D_prime]/( pvecback_B[pba->index_bi_D]*a*pvecback[pba->index_bg_H]);
 
+    /** - FSG cosmic memory fields (spectators; integrated in background_derivs) */
+    pvecback[pba->index_bg_U_fsg] = pvecback_B[pba->index_bi_U_fsg];
+    pvecback[pba->index_bg_V_fsg] = pvecback_B[pba->index_bi_V_fsg];
+
     /**- Varying fundamental constants */
     if (pba->has_varconst == _TRUE_) {
       class_call(background_varconst_of_z(pba,
@@ -1130,6 +1134,8 @@ int background_indices(
   class_define_index(pba->index_bg_rs,_TRUE_,index_bg,1);
 
   /* -> density growth factor in dust universe */
+  class_define_index(pba->index_bg_U_fsg,_TRUE_,index_bg,1);
+  class_define_index(pba->index_bg_V_fsg,_TRUE_,index_bg,1);
   class_define_index(pba->index_bg_D,_TRUE_,index_bg,1);
 
   /* -> velocity growth factor in dust universe */
@@ -1183,6 +1189,12 @@ int background_indices(
   /* -> Second order equation for growth factor */
   class_define_index(pba->index_bi_D,_TRUE_,index_bi,1);
   class_define_index(pba->index_bi_D_prime,_TRUE_,index_bi,1);
+
+  /* -> FSG cosmic memory fields U = Box^-1 R and V = H0^2 Box^-2 R (each 2nd order) */
+  class_define_index(pba->index_bi_U_fsg,_TRUE_,index_bi,1);
+  class_define_index(pba->index_bi_U_prime_fsg,_TRUE_,index_bi,1);
+  class_define_index(pba->index_bi_V_fsg,_TRUE_,index_bi,1);
+  class_define_index(pba->index_bi_V_prime_fsg,_TRUE_,index_bi,1);
 
 
   /* -> end of indices in the vector of variables to integrate */
@@ -2326,6 +2338,12 @@ int background_initial_conditions(
   pvecback_integration[pba->index_bi_D] = 1.;
   pvecback_integration[pba->index_bi_D_prime] = 2.*a*pvecback[pba->index_bg_H];
 
+  /* FSG memory fields: zero deep in the radiation era (R -> 0 there) */
+  pvecback_integration[pba->index_bi_U_fsg] = 0.;
+  pvecback_integration[pba->index_bi_U_prime_fsg] = 0.;
+  pvecback_integration[pba->index_bi_V_fsg] = 0.;
+  pvecback_integration[pba->index_bi_V_prime_fsg] = 0.;
+
   /** - return the value finally chosen for the initial log(a) */
   *loga_ini = log(a);
 
@@ -2476,6 +2494,8 @@ int background_output_titles(
 
   class_store_columntitle(titles,"gr.fac. D",_TRUE_);
   class_store_columntitle(titles,"gr.fac. f",_TRUE_);
+  class_store_columntitle(titles,"U_fsg",_TRUE_);
+  class_store_columntitle(titles,"V_fsg",_TRUE_);
 
   class_store_columntitle(titles,"rel. alpha",pba->has_varconst);
   class_store_columntitle(titles,"rel. m_e",pba->has_varconst);
@@ -2552,6 +2572,8 @@ int background_output_data(
 
     class_store_double(dataptr,pvecback[pba->index_bg_D],_TRUE_,storeidx);
     class_store_double(dataptr,pvecback[pba->index_bg_f],_TRUE_,storeidx);
+    class_store_double(dataptr,pvecback[pba->index_bg_U_fsg],_TRUE_,storeidx);
+    class_store_double(dataptr,pvecback[pba->index_bg_V_fsg],_TRUE_,storeidx);
 
     class_store_double(dataptr,pvecback[pba->index_bg_varc_alpha],pba->has_varconst,storeidx);
     class_store_double(dataptr,pvecback[pba->index_bg_varc_me],pba->has_varconst,storeidx);
@@ -2644,6 +2666,19 @@ int background_derivs(
 
   dy[pba->index_bi_D] = y[pba->index_bi_D_prime]/a/H;
   dy[pba->index_bi_D_prime] = -y[pba->index_bi_D_prime] + 1.5*a*rho_M*y[pba->index_bi_D]/H;
+
+  /** - FSG cosmic memory fields, integrated w.r.t. x = ln(a):
+        U'' + (3 + h'/h) U' = -6 (h'/h + 2)   [Box U = R]
+        V'' + (3 + h'/h) V' = -U / h^2         [Box V = U, h = H/H0 dimensionless]
+        with ' = d/dln(a) and h'/h = H_prime/(a H^2) (H_prime = dH/dtau). */
+  {
+    double hp_over_h = pvecback[pba->index_bg_H_prime]/(a*H*H);
+    double h_dimless = H/pba->H0;
+    dy[pba->index_bi_U_fsg] = y[pba->index_bi_U_prime_fsg];
+    dy[pba->index_bi_U_prime_fsg] = -(3.+hp_over_h)*y[pba->index_bi_U_prime_fsg] - 6.*(hp_over_h + 2.);
+    dy[pba->index_bi_V_fsg] = y[pba->index_bi_V_prime_fsg];
+    dy[pba->index_bi_V_prime_fsg] = -(3.+hp_over_h)*y[pba->index_bi_V_prime_fsg] - y[pba->index_bi_U_fsg]/(h_dimless*h_dimless);
+  }
 
   if (pba->has_dcdm == _TRUE_) {
     /** - compute dcdm density \f$ d\rho/dloga = -3 \rho - \Gamma/H \rho \f$*/

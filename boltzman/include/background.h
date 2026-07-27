@@ -204,6 +204,8 @@ struct background
 
   int index_bg_D;             /**< scale independent growth factor D(a) for CDM perturbations */
   int index_bg_f;             /**< corresponding velocity growth factor [dlnD]/[dln a] */
+  int index_bg_U_fsg;         /**< FSG cosmic memory field U = Box^-1 R (dimensionless) */
+  int index_bg_V_fsg;         /**< FSG cosmic memory field V = H0^2 Box^-2 R (dimensionless) */
 
   int index_bg_varc_alpha;    /**< value of fine structure constant in varying fundamental constants */
   int index_bg_varc_me;      /**< value of effective electron mass in varying fundamental constants */
@@ -263,6 +265,10 @@ struct background
   int index_bi_tau;     /**< {C} conformal time in Mpc */
   int index_bi_D;       /**< {C} scale independent growth factor D(a) for CDM perturbations. */
   int index_bi_D_prime; /**< {C} D satisfies \f$ [D''(\tau)=-aHD'(\tau)+3/2 a^2 \rho_M D(\tau) \f$ */
+  int index_bi_U_fsg;       /**< {C} FSG memory field U = Box^-1 R */
+  int index_bi_U_prime_fsg; /**< {C} dU/dln(a) */
+  int index_bi_V_fsg;       /**< {C} FSG memory field V = H0^2 Box^-2 R */
+  int index_bi_V_prime_fsg; /**< {C} dV/dln(a) */
 
   int bi_B_size;        /**< Number of {B} parameters */
   int bi_size;          /**< Number of {B}+{C} parameters */

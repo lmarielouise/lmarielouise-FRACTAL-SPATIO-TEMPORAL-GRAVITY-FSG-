@@ -6559,6 +6559,23 @@ int perturbations_einstein(
              ppt->error_message,
              ppt->error_message);
 
+  /** - FSG phenomenological "Fractal Boost": for scalar modes, enhance the total
+      matter source in the infrared (k < k_trans = 10 H0) by a factor
+      (k_trans/k)^1.5, capped at 50, to mimic a scale-dependent effective
+      gravitational coupling G_eff(k) that deepens potential wells at large scales.
+      This is a phenomenological ansatz (not derived from the FSG action). */
+  if (_scalars_) {
+    double k_trans_fsg = 10. * pba->H0;
+    if (k < k_trans_fsg) {
+      double boost_fsg = pow(k_trans_fsg / k, 1.5);
+      if (boost_fsg > 50.0) boost_fsg = 50.0;
+      ppw->delta_rho        *= boost_fsg;
+      ppw->rho_plus_p_theta *= boost_fsg;
+      ppw->rho_plus_p_shear *= boost_fsg;
+      ppw->delta_p          *= boost_fsg;
+    }
+  }
+
   /** - for scalar modes: */
 
   if (_scalars_) {
